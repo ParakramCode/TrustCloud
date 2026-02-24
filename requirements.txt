@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+gunicorn
+pydantic
+boto3
+flask
+sentence-transformers
+scikit-learn
+numpy
+textblob
+spacy
