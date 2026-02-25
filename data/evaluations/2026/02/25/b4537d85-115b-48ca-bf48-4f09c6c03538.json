@@ -1,0 +1,108 @@
+{
+  "id": "b4537d85-115b-48ca-bf48-4f09c6c03538",
+  "timestamp": "2026-02-25T15:51:13.178188+00:00",
+  "input": {
+    "text": "Antibiotics work by either killing bacteria or preventing their reproduction. Penicillin, discovered by Alexander Fleming in 1928, inhibits bacterial cell wall synthesis. However, the overuse and misuse of antibiotics has led to the emergence of antibiotic-resistant bacteria, which the World Health Organization considers one of the greatest threats to global health, food security, and development.",
+    "text_length": 400,
+    "metadata": {
+      "category": "high_trust",
+      "source_file": "science_and_facts.json",
+      "sample_index": 13,
+      "topic": "medicine",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.387,
+    "confidence": 0.856,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.482,
+      "uncertainty": 0.083,
+      "interval": [
+        0.319,
+        0.645
+      ],
+      "latency_ms": 114.83,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.15,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.456
+      ],
+      "latency_ms": 1.14,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 0.05,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 6.72,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.561,
+      "uncertainty": 0.125,
+      "interval": [
+        0.316,
+        0.806
+      ],
+      "latency_ms": 78.9,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.482,
+      "uncertainty": 0.083,
+      "interval": [
+        0.319,
+        0.645
+      ],
+      "latency_ms": 92.68,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.15,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

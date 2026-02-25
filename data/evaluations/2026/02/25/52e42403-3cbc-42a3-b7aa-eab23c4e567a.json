@@ -1,0 +1,108 @@
+{
+  "id": "52e42403-3cbc-42a3-b7aa-eab23c4e567a",
+  "timestamp": "2026-02-25T15:51:12.218752+00:00",
+  "input": {
+    "text": "Machine learning algorithms can be broadly categorised into supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labelled training data to learn a mapping from inputs to outputs. Common supervised algorithms include linear regression, decision trees, and neural networks. The choice of algorithm depends on the nature of the data and the specific task requirements.",
+    "text_length": 409,
+    "metadata": {
+      "category": "high_trust",
+      "source_file": "science_and_facts.json",
+      "sample_index": 11,
+      "topic": "computer_science",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.279,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.445,
+      "uncertainty": 0.086,
+      "interval": [
+        0.276,
+        0.614
+      ],
+      "latency_ms": 131.74,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.16,
+      "interval": [
+        0.0,
+        0.314
+      ],
+      "latency_ms": 0.91,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.619
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 7.79,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.047,
+      "uncertainty": 0.128,
+      "interval": [
+        0.0,
+        0.298
+      ],
+      "latency_ms": 71.81,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.445,
+      "uncertainty": 0.086,
+      "interval": [
+        0.276,
+        0.614
+      ],
+      "latency_ms": 90.77,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

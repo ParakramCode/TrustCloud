@@ -1,8 +1,15 @@
 __pycache__/
+*.pyc
+*.pyo
 .env
-.git
+.git/
 .gitignore
 venv/
-*.pyc
 *.log
 node_modules/
+data/
+docs/
+dashboard/
+*.md
+test_*.py
+local_db.json

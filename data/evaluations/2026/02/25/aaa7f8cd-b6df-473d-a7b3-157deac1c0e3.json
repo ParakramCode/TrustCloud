@@ -1,0 +1,108 @@
+{
+  "id": "aaa7f8cd-b6df-473d-a7b3-157deac1c0e3",
+  "timestamp": "2026-02-25T15:50:56.559316+00:00",
+  "input": {
+    "text": "Data analysis reveals that the data has been analysed. The findings from the analysis indicate that an analysis was conducted. The main insight from examining the data is that the data was examined.",
+    "text_length": 198,
+    "metadata": {
+      "category": "circular",
+      "source_file": "tautologies.json",
+      "sample_index": 9,
+      "topic": "tautology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.387,
+    "confidence": 0.856,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.636,
+      "uncertainty": 0.083,
+      "interval": [
+        0.473,
+        0.799
+      ],
+      "latency_ms": 90.58,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.306
+      ],
+      "latency_ms": 1.33,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.608
+      ],
+      "latency_ms": 0.05,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 1.64,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 48.49,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.636,
+      "uncertainty": 0.083,
+      "interval": [
+        0.473,
+        0.799
+      ],
+      "latency_ms": 81.3,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

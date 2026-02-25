@@ -1,0 +1,108 @@
+{
+  "id": "177e7e77-1a5e-42f1-b8e1-ee6a0d06e8d1",
+  "timestamp": "2026-02-25T15:51:01.779721+00:00",
+  "input": {
+    "text": "The speed of light is the fastest speed possible in the universe. However, many things travel faster than light. Physicists have proven that nothing exceeds light speed and that exceeding light speed happens routinely.",
+    "text_length": 218,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 11,
+      "topic": "physics_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.3,
+    "confidence": 0.856,
+    "trust_level": "DEFEATED",
+    "defeated": true
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.64,
+      "uncertainty": 0.083,
+      "interval": [
+        0.477,
+        0.803
+      ],
+      "latency_ms": 86.92,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.75,
+      "uncertainty": 0.156,
+      "interval": [
+        0.444,
+        1.0
+      ],
+      "latency_ms": 0.96,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.4,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.808
+      ],
+      "latency_ms": 0.07,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 1.97,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 49.24,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.64,
+      "uncertainty": 0.083,
+      "interval": [
+        0.477,
+        0.803
+      ],
+      "latency_ms": 88.49,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.75,
+      "active": true
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.4,
+      "active": false
+    }
+  ]
+}

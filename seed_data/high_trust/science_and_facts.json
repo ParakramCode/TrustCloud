@@ -1,0 +1,77 @@
+[
+  {
+    "text": "Water exists in three states: solid, liquid, and gas. At 0 degrees Celsius, water freezes into ice. At 100 degrees Celsius at standard atmospheric pressure, water boils and becomes steam. The transition between these states is governed by the kinetic energy of water molecules, which increases with temperature.",
+    "source": "curated",
+    "topic": "physics"
+  },
+  {
+    "text": "Photosynthesis is the process by which green plants convert carbon dioxide and water into glucose and oxygen using sunlight. This occurs primarily in the chloroplasts of plant cells, where chlorophyll absorbs light energy. The overall equation is 6CO2 + 6H2O + light energy → C6H12O6 + 6O2. This process is fundamental to life on Earth as it produces both food and oxygen.",
+    "source": "curated",
+    "topic": "biology"
+  },
+  {
+    "text": "The theory of plate tectonics explains the large-scale motion of seven large plates and many smaller plates of Earth's lithosphere. These plates move at rates of 2 to 15 centimetres per year. When plates converge, one may be forced beneath the other in a process called subduction, which can produce earthquakes and volcanic activity along the boundary.",
+    "source": "curated",
+    "topic": "geology"
+  },
+  {
+    "text": "Newton's three laws of motion form the foundation of classical mechanics. The first law states that an object at rest stays at rest unless acted upon by an external force. The second law relates force, mass, and acceleration through F = ma. The third law states that for every action there is an equal and opposite reaction. These laws were published in 1687 in the Principia Mathematica.",
+    "source": "curated",
+    "topic": "physics"
+  },
+  {
+    "text": "DNA replication is a semi-conservative process in which each strand of the double helix serves as a template for a new complementary strand. The enzyme helicase unwinds the double helix, and DNA polymerase synthesises new strands by adding nucleotides complementary to the template. This ensures that each daughter cell receives an identical copy of the genetic information.",
+    "source": "curated",
+    "topic": "biology"
+  },
+  {
+    "text": "The Krebs cycle, also known as the citric acid cycle, is a series of chemical reactions used by all aerobic organisms to release stored energy through the oxidation of acetyl-CoA derived from carbohydrates, fats, and proteins. Each cycle produces 2 CO2 molecules, 1 GTP, 3 NADH, and 1 FADH2. It takes place in the mitochondrial matrix.",
+    "source": "curated",
+    "topic": "biochemistry"
+  },
+  {
+    "text": "The speed of light in a vacuum is approximately 299,792,458 metres per second. This constant, denoted c, is fundamental to Einstein's theory of special relativity, which establishes that no object with mass can reach or exceed this speed. The relationship between energy and mass is expressed by the equation E = mc², published by Einstein in 1905.",
+    "source": "curated",
+    "topic": "physics"
+  },
+  {
+    "text": "The human heart pumps approximately 5 litres of blood per minute at rest, circulating through roughly 100,000 kilometres of blood vessels. The cardiac cycle consists of two phases: systole, during which the heart contracts and pumps blood, and diastole, during which it relaxes and fills with blood. A healthy resting heart rate is typically between 60 and 100 beats per minute.",
+    "source": "curated",
+    "topic": "medicine"
+  },
+  {
+    "text": "Ohm's law states that the current through a conductor between two points is directly proportional to the voltage across the two points, expressed as V = IR, where V is voltage, I is current, and R is resistance. This relationship was first described by Georg Simon Ohm in 1827 and remains fundamental to electrical circuit analysis.",
+    "source": "curated",
+    "topic": "physics"
+  },
+  {
+    "text": "The periodic table organises 118 known chemical elements by atomic number, electron configuration, and recurring chemical properties. Elements in the same group share similar chemical behaviour because they have the same number of valence electrons. Dmitri Mendeleev published the first widely recognised periodic table in 1869, correctly predicting the properties of several undiscovered elements.",
+    "source": "curated",
+    "topic": "chemistry"
+  },
+  {
+    "text": "Continental drift, first proposed by Alfred Wegener in 1912, suggested that continents were once joined in a supercontinent called Pangaea approximately 335 million years ago. Evidence includes matching fossil records across continents, similar rock formations, and the jigsaw-like fit of continental coastlines. This hypothesis was later confirmed and expanded by the theory of plate tectonics.",
+    "source": "curated",
+    "topic": "geology"
+  },
+  {
+    "text": "Machine learning algorithms can be broadly categorised into supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labelled training data to learn a mapping from inputs to outputs. Common supervised algorithms include linear regression, decision trees, and neural networks. The choice of algorithm depends on the nature of the data and the specific task requirements.",
+    "source": "curated",
+    "topic": "computer_science"
+  },
+  {
+    "text": "The French Revolution began in 1789 with the storming of the Bastille on July 14. Its causes included fiscal crisis, social inequality between the Three Estates, and Enlightenment ideas about individual rights. The revolution led to the abolition of the monarchy, the execution of King Louis XVI in 1793, and eventually the rise of Napoleon Bonaparte. It fundamentally transformed French society and influenced democratic movements worldwide.",
+    "source": "curated",
+    "topic": "history"
+  },
+  {
+    "text": "Antibiotics work by either killing bacteria or preventing their reproduction. Penicillin, discovered by Alexander Fleming in 1928, inhibits bacterial cell wall synthesis. However, the overuse and misuse of antibiotics has led to the emergence of antibiotic-resistant bacteria, which the World Health Organization considers one of the greatest threats to global health, food security, and development.",
+    "source": "curated",
+    "topic": "medicine"
+  },
+  {
+    "text": "The water cycle describes the continuous movement of water within the Earth and atmosphere. It involves evaporation from bodies of water, transpiration from plants, condensation into clouds, and precipitation as rain or snow. Approximately 71 percent of Earth's surface is covered by water, with 97.5 percent being saltwater in the oceans and only 2.5 percent being freshwater.",
+    "source": "curated",
+    "topic": "earth_science"
+  }
+]

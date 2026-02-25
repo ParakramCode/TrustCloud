@@ -1,0 +1,248 @@
+{
+  "input": {
+    "text": "According to a 2024 study by the International Bureau of Atmospheric Research, cloud formations in the stratosphere directly regulate 78.3 percent of global ocean currents. Dr. Helena Marchetti of the Vienna Institute confirmed these findings using spectral resonance imaging at a resolution of 0.003 nanometres.",
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 0,
+      "topic": "fabricated_institution",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.231,
+    "confidence": 0.849,
+    "trust_level": "LOW",
+    "defeated": false,
+    "interpretation": "Assessment indicates low epistemic trust (composite: 0.231). System confidence is high (0.849): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.099,
+      "uncertainty": 0.087,
+      "interval": [
+        0.0,
+        0.27
+      ],
+      "explanation": "Measured cosine similarity between 5 adjacent sentence pairs. Average similarity: 0.099, minimum: -0.090, std: 0.123.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.249
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": -0.09
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 2,
+          "similarity": 0.142
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 3,
+          "similarity": 0.093
+        }
+      ],
+      "error": null,
+      "latency_ms": 143.76
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.1,
+      "uncertainty": 0.164,
+      "interval": [
+        0.0,
+        0.421
+      ],
+      "explanation": "Negation terms found: ['no'].",
+      "evidence": [
+        {
+          "type": "negation_terms",
+          "found": [
+            "no"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 1.32
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.218,
+      "interval": [
+        0.0,
+        0.427
+      ],
+      "explanation": "No hallucination risk indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 0.05
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.218,
+      "interval": [
+        0.0,
+        0.427
+      ],
+      "explanation": "No reasoning structure detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 4.53
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 1.0,
+      "uncertainty": 0.131,
+      "interval": [
+        0.743,
+        1.0
+      ],
+      "explanation": "Found 6 named entities, 5 numeric references, 0 date/time entities, 9 proper nouns across 48 tokens. Normalized density: 0.115. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 6,
+          "entities": [
+            {
+              "text": "2024",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "the International Bureau of Atmospheric Research",
+              "label": "ORG"
+            },
+            {
+              "text": "78.3 percent",
+              "label": "PERCENT"
+            },
+            {
+              "text": "Helena Marchetti",
+              "label": "PERSON"
+            },
+            {
+              "text": "Vienna Institute",
+              "label": "ORG"
+            },
+            {
+              "text": "0.003 nanometres",
+              "label": "QUANTITY"
+            }
+          ]
+        },
+        {
+          "type": "numeric_references",
+          "count": 5
+        },
+        {
+          "type": "date_time_entities",
+          "count": 0
+        },
+        {
+          "type": "proper_nouns",
+          "count": 9,
+          "nouns": [
+            "International",
+            "Bureau",
+            "Atmospheric",
+            "Research",
+            "Dr.",
+            "Helena",
+            "Marchetti",
+            "Vienna",
+            "Institute"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 64.94
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.125,
+      "uncertainty": 0.087,
+      "interval": [
+        0.0,
+        0.296
+      ],
+      "explanation": "Computed pairwise semantic similarity across 4 sentences (min length >10 chars). Average cosine similarity: 0.125, minimum: 0.031.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.249
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.031
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 2,
+          "similarity": 0.093
+        }
+      ],
+      "error": null,
+      "latency_ms": 104.27
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.1,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.100 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.000 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.151,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

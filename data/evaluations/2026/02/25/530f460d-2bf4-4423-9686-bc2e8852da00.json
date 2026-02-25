@@ -1,0 +1,108 @@
+{
+  "id": "530f460d-2bf4-4423-9686-bc2e8852da00",
+  "timestamp": "2026-02-25T15:51:20.042206+00:00",
+  "input": {
+    "text": "Neural networks are computational models inspired by biological neural networks. They consist of layers of interconnected nodes that process information. Deep learning, which uses neural networks with many layers, has achieved remarkable results in image recognition, natural language processing, and game playing. Key architectures include convolutional neural networks for image tasks and transformers for sequential data.",
+    "text_length": 424,
+    "metadata": {
+      "category": "mixed",
+      "source_file": "realistic_llm_outputs.json",
+      "sample_index": 4,
+      "topic": "technical_explanation",
+      "source": "simulated_llm"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.296,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.381,
+      "uncertainty": 0.086,
+      "interval": [
+        0.212,
+        0.55
+      ],
+      "latency_ms": 109.53,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.1,
+      "uncertainty": 0.16,
+      "interval": [
+        0.0,
+        0.414
+      ],
+      "latency_ms": 1.0,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.3,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.719
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.25,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.669
+      ],
+      "latency_ms": 11.42,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.047,
+      "uncertainty": 0.128,
+      "interval": [
+        0.0,
+        0.298
+      ],
+      "latency_ms": 94.84,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.381,
+      "uncertainty": 0.086,
+      "interval": [
+        0.212,
+        0.55
+      ],
+      "latency_ms": 87.31,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.1,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.3,
+      "active": false
+    }
+  ]
+}

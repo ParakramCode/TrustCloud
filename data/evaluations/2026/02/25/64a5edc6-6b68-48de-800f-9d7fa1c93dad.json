@@ -1,0 +1,108 @@
+{
+  "id": "64a5edc6-6b68-48de-800f-9d7fa1c93dad",
+  "timestamp": "2026-02-25T15:50:55.737075+00:00",
+  "input": {
+    "text": "Innovation drives progress because progress is driven by things that are innovative. When innovation occurs, the result is that innovative things have happened. This proves that innovation causes innovation to happen.",
+    "text_length": 217,
+    "metadata": {
+      "category": "circular",
+      "source_file": "tautologies.json",
+      "sample_index": 7,
+      "topic": "tautology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.504,
+    "confidence": 0.846,
+    "trust_level": "MEDIUM",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.814,
+      "uncertainty": 0.083,
+      "interval": [
+        0.651,
+        0.977
+      ],
+      "latency_ms": 96.6,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.4,
+      "uncertainty": 0.156,
+      "interval": [
+        0.094,
+        0.706
+      ],
+      "latency_ms": 0.82,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.3,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.708
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.27,
+      "interval": [
+        0.0,
+        0.53
+      ],
+      "latency_ms": 1.91,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 45.64,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.814,
+      "uncertainty": 0.083,
+      "interval": [
+        0.651,
+        0.977
+      ],
+      "latency_ms": 62.0,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.4,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.3,
+      "active": false
+    }
+  ]
+}

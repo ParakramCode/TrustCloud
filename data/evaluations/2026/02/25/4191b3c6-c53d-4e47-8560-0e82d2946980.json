@@ -1,0 +1,108 @@
+{
+  "id": "4191b3c6-c53d-4e47-8560-0e82d2946980",
+  "timestamp": "2026-02-25T15:50:55.308181+00:00",
+  "input": {
+    "text": "Healthy eating is good for health because eating healthily promotes being healthy. The health benefits of healthy food come from the fact that healthy food is healthy. Therefore, to be healthy, one should eat food that is healthy.",
+    "text_length": 230,
+    "metadata": {
+      "category": "circular",
+      "source_file": "tautologies.json",
+      "sample_index": 6,
+      "topic": "tautology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.572,
+    "confidence": 0.856,
+    "trust_level": "MEDIUM",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.829,
+      "uncertainty": 0.083,
+      "interval": [
+        0.666,
+        0.992
+      ],
+      "latency_ms": 77.3,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.306
+      ],
+      "latency_ms": 2.35,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.608
+      ],
+      "latency_ms": 0.1,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.3,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.708
+      ],
+      "latency_ms": 2.98,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 54.23,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.829,
+      "uncertainty": 0.083,
+      "interval": [
+        0.666,
+        0.992
+      ],
+      "latency_ms": 90.28,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "90fec33c-9668-4496-9fce-20e62558e896",
+  "timestamp": "2026-02-25T15:51:08.137667+00:00",
+  "input": {
+    "text": "The theory of plate tectonics explains the large-scale motion of seven large plates and many smaller plates of Earth's lithosphere. These plates move at rates of 2 to 15 centimetres per year. When plates converge, one may be forced beneath the other in a process called subduction, which can produce earthquakes and volcanic activity along the boundary.",
+    "text_length": 353,
+    "metadata": {
+      "category": "high_trust",
+      "source_file": "science_and_facts.json",
+      "sample_index": 2,
+      "topic": "geology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.271,
+    "confidence": 0.856,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.341,
+      "uncertainty": 0.083,
+      "interval": [
+        0.178,
+        0.504
+      ],
+      "latency_ms": 116.54,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.306
+      ],
+      "latency_ms": 0.9,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.1,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.508
+      ],
+      "latency_ms": 0.08,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.1,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.508
+      ],
+      "latency_ms": 6.39,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.246,
+      "uncertainty": 0.125,
+      "interval": [
+        0.001,
+        0.491
+      ],
+      "latency_ms": 84.11,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.341,
+      "uncertainty": 0.083,
+      "interval": [
+        0.178,
+        0.504
+      ],
+      "latency_ms": 113.67,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.1,
+      "active": false
+    }
+  ]
+}

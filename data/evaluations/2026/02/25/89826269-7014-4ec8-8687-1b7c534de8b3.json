@@ -1,0 +1,108 @@
+{
+  "id": "89826269-7014-4ec8-8687-1b7c534de8b3",
+  "timestamp": "2026-02-25T15:51:12.729820+00:00",
+  "input": {
+    "text": "The French Revolution began in 1789 with the storming of the Bastille on July 14. Its causes included fiscal crisis, social inequality between the Three Estates, and Enlightenment ideas about individual rights. The revolution led to the abolition of the monarchy, the execution of King Louis XVI in 1793, and eventually the rise of Napoleon Bonaparte. It fundamentally transformed French society and influenced democratic movements worldwide.",
+    "text_length": 442,
+    "metadata": {
+      "category": "high_trust",
+      "source_file": "science_and_facts.json",
+      "sample_index": 12,
+      "topic": "history",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.339,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.228,
+      "uncertainty": 0.086,
+      "interval": [
+        0.059,
+        0.397
+      ],
+      "latency_ms": 176.11,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.16,
+      "interval": [
+        0.0,
+        0.314
+      ],
+      "latency_ms": 1.01,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.15,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.569
+      ],
+      "latency_ms": 9.7,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 1.0,
+      "uncertainty": 0.128,
+      "interval": [
+        0.749,
+        1.0
+      ],
+      "latency_ms": 78.89,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.228,
+      "uncertainty": 0.086,
+      "interval": [
+        0.059,
+        0.397
+      ],
+      "latency_ms": 147.68,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

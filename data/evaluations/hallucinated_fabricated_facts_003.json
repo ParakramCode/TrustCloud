@@ -1,0 +1,230 @@
+{
+  "input": {
+    "text": "The Brennan-Okafor theorem, established in 1987, proves that any polynomial-time algorithm for graph isomorphism must use at least O(n log log n) space. This theorem was a direct consequence of the Ramirez conjecture, first proposed at the 1983 Tokyo Conference on Discrete Mathematics.",
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 3,
+      "topic": "fabricated_theorem",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.385,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false,
+    "interpretation": "Assessment indicates low epistemic trust (composite: 0.385). System confidence is high (0.852): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.391,
+      "uncertainty": 0.08,
+      "interval": [
+        0.234,
+        0.548
+      ],
+      "explanation": "Measured cosine similarity between 2 adjacent sentence pairs. Average similarity: 0.391, minimum: 0.391, std: 0.000.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.391
+        }
+      ],
+      "error": null,
+      "latency_ms": 103.95
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.1,
+      "uncertainty": 0.15,
+      "interval": [
+        0.0,
+        0.394
+      ],
+      "explanation": "Negation terms found: ['no'].",
+      "evidence": [
+        {
+          "type": "negation_terms",
+          "found": [
+            "no"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 1.1
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.392
+      ],
+      "explanation": "No hallucination risk indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 0.05
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.26,
+      "interval": [
+        0.0,
+        0.51
+      ],
+      "explanation": "Multi-step chain markers: ['first'] (+0.10). Fake causality: ['proves that'] (-0.20).",
+      "evidence": [
+        {
+          "type": "chain_markers",
+          "found": [
+            "first"
+          ],
+          "bonus": 0.1
+        },
+        {
+          "type": "fake_causality",
+          "found": [
+            "proves that"
+          ],
+          "penalty": 0.2
+        }
+      ],
+      "error": null,
+      "latency_ms": 3.42
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 0.849,
+      "uncertainty": 0.12,
+      "interval": [
+        0.614,
+        1.0
+      ],
+      "explanation": "Found 4 named entities, 2 numeric references, 1 date/time entities, 9 proper nouns across 53 tokens. Normalized density: 0.085. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 4,
+          "entities": [
+            {
+              "text": "1987",
+              "label": "DATE"
+            },
+            {
+              "text": "Ramirez",
+              "label": "PERSON"
+            },
+            {
+              "text": "the 1983",
+              "label": "EVENT"
+            },
+            {
+              "text": "Tokyo Conference on Discrete Mathematics",
+              "label": "EVENT"
+            }
+          ]
+        },
+        {
+          "type": "numeric_references",
+          "count": 2
+        },
+        {
+          "type": "date_time_entities",
+          "count": 1
+        },
+        {
+          "type": "proper_nouns",
+          "count": 9,
+          "nouns": [
+            "Brennan",
+            "Okafor",
+            "log",
+            "log",
+            "Ramirez",
+            "Tokyo",
+            "Conference",
+            "Discrete",
+            "Mathematics"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 53.47
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.391,
+      "uncertainty": 0.08,
+      "interval": [
+        0.234,
+        0.548
+      ],
+      "explanation": "Computed pairwise semantic similarity across 2 sentences (min length >10 chars). Average cosine similarity: 0.391, minimum: 0.391.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.391
+        }
+      ],
+      "error": null,
+      "latency_ms": 97.62
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.1,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.100 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.000 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.148,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

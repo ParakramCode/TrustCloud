@@ -1,0 +1,108 @@
+{
+  "id": "faaa3604-db70-4866-b3b8-627e933de9cb",
+  "timestamp": "2026-02-25T15:51:00.911777+00:00",
+  "input": {
+    "text": "Water boils at 100 degrees Celsius at sea level. Yet water never boils at any temperature. The boiling point of water is simultaneously 100 degrees and nonexistent, as confirmed by all thermodynamic research.",
+    "text_length": 208,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 9,
+      "topic": "chemistry_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.3,
+    "confidence": 0.856,
+    "trust_level": "DEFEATED",
+    "defeated": true
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.666,
+      "uncertainty": 0.083,
+      "interval": [
+        0.503,
+        0.829
+      ],
+      "latency_ms": 116.34,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.75,
+      "uncertainty": 0.156,
+      "interval": [
+        0.444,
+        1.0
+      ],
+      "latency_ms": 1.0,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.1,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.508
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 2.39,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.351,
+      "uncertainty": 0.125,
+      "interval": [
+        0.106,
+        0.596
+      ],
+      "latency_ms": 49.86,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.666,
+      "uncertainty": 0.083,
+      "interval": [
+        0.503,
+        0.829
+      ],
+      "latency_ms": 95.1,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.75,
+      "active": true
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.1,
+      "active": false
+    }
+  ]
+}

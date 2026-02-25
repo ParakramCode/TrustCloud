@@ -1,0 +1,108 @@
+{
+  "id": "f631b7fd-dc09-45c7-a527-0b84fa37f235",
+  "timestamp": "2026-02-25T15:51:03.934998+00:00",
+  "input": {
+    "text": "Studies show that 67.4 percent of adults who consume more than 3 cups of green tea daily experience a 23.8 percent reduction in cortisol levels within 14 days. This was confirmed by meta-analysis of 42 randomised controlled trials published in the Lancet Nutrition in September 2024.",
+    "text_length": 283,
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 4,
+      "topic": "fabricated_statistics",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.337,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.28,
+      "uncertainty": 0.086,
+      "interval": [
+        0.111,
+        0.449
+      ],
+      "latency_ms": 99.78,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.16,
+      "interval": [
+        0.0,
+        0.314
+      ],
+      "latency_ms": 1.5,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 3.28,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 1.0,
+      "uncertainty": 0.128,
+      "interval": [
+        0.749,
+        1.0
+      ],
+      "latency_ms": 68.91,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.28,
+      "uncertainty": 0.086,
+      "interval": [
+        0.111,
+        0.449
+      ],
+      "latency_ms": 108.27,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+    {
+        "text": "AI is important because it is important. The reason AI matters is that AI is something that matters. This is significant because of its significance.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Climate change is happening because the climate is changing. The changing climate is caused by changes in the climate. Therefore, climate change is the result of the climate being different from what it was.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Education is valuable because learning has value. The value of education comes from the fact that it is an educational experience. Students benefit from education because educational experiences are beneficial to students.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "The economy grows because of economic growth. When the economy expands, this expansion is what causes the economy to become larger. Therefore, economic growth is the primary driver of a growing economy.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "This algorithm is efficient because it runs efficiently. The efficiency of the algorithm is demonstrated by the fact that it is an efficient algorithm. Performance improvements come from the improved performance of the system.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Trust in AI systems is important because we need to trust AI systems. The reason trust matters is that without trust, there would be no trust. Building trust requires that trust be built.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Healthy eating is good for health because eating healthily promotes being healthy. The health benefits of healthy food come from the fact that healthy food is healthy. Therefore, to be healthy, one should eat food that is healthy.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Innovation drives progress because progress is driven by things that are innovative. When innovation occurs, the result is that innovative things have happened. This proves that innovation causes innovation to happen.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Security is critical because without security there would be insecurity. A secure system is one that has been secured. The importance of security lies in the fact that it is important to be secure.",
+        "source": "curated",
+        "topic": "tautology"
+    },
+    {
+        "text": "Data analysis reveals that the data has been analysed. The findings from the analysis indicate that an analysis was conducted. The main insight from examining the data is that the data was examined.",
+        "source": "curated",
+        "topic": "tautology"
+    }
+]

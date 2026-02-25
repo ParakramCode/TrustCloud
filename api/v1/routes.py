@@ -8,7 +8,7 @@ import logging
 import uuid
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, BackgroundTasks
+from fastapi import APIRouter, BackgroundTasks, HTTPException
 
 from schemas.request import TrustRequest
 from schemas.response import TrustResponse
@@ -45,10 +45,19 @@ def evaluate(req: TrustRequest, background_tasks: BackgroundTasks):
     config = get_config()
 
     # Run epistemic evaluation
-    result = engine.evaluate(
-        text=req.text,
-        validator_names=req.validators,
-    )
+    try:
+        result = engine.evaluate(
+            text=req.text,
+            validator_names=req.validators,
+        )
+    except KeyError as e:
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": str(e),
+                "available_validators": engine.registry.names(),
+            },
+        )
 
     # Build telemetry record
     record_id = str(uuid.uuid4())

@@ -1,0 +1,108 @@
+{
+  "id": "59c12598-f593-4eb2-b6d5-4d451860b4ab",
+  "timestamp": "2026-02-25T15:51:19.612953+00:00",
+  "input": {
+    "text": "Blockchain technology provides a decentralised, immutable ledger for recording transactions. Its applications extend beyond cryptocurrency to supply chain management, voting systems, and digital identity. However, blockchain systems face challenges including scalability limitations, energy consumption concerns particularly with proof-of-work consensus, and regulatory uncertainty. The technology is probably not suitable for all data storage needs.",
+    "text_length": 450,
+    "metadata": {
+      "category": "mixed",
+      "source_file": "realistic_llm_outputs.json",
+      "sample_index": 3,
+      "topic": "technology_with_hedging",
+      "source": "simulated_llm"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.226,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.359,
+      "uncertainty": 0.086,
+      "interval": [
+        0.19,
+        0.528
+      ],
+      "latency_ms": 123.5,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.35,
+      "uncertainty": 0.16,
+      "interval": [
+        0.036,
+        0.664
+      ],
+      "latency_ms": 0.87,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.619
+      ],
+      "latency_ms": 0.08,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 12.28,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.045,
+      "uncertainty": 0.128,
+      "interval": [
+        0.0,
+        0.296
+      ],
+      "latency_ms": 89.67,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.359,
+      "uncertainty": 0.086,
+      "interval": [
+        0.19,
+        0.528
+      ],
+      "latency_ms": 98.52,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.35,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

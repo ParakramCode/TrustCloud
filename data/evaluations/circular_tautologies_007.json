@@ -1,0 +1,234 @@
+{
+  "input": {
+    "text": "Innovation drives progress because progress is driven by things that are innovative. When innovation occurs, the result is that innovative things have happened. This proves that innovation causes innovation to happen.",
+    "metadata": {
+      "category": "circular",
+      "source_file": "tautologies.json",
+      "sample_index": 7,
+      "topic": "tautology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.504,
+    "confidence": 0.846,
+    "trust_level": "MEDIUM",
+    "defeated": false,
+    "interpretation": "Assessment indicates moderate epistemic trust (composite: 0.504). System confidence is high (0.846): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.814,
+      "uncertainty": 0.083,
+      "interval": [
+        0.651,
+        0.977
+      ],
+      "explanation": "Measured cosine similarity between 3 adjacent sentence pairs. Average similarity: 0.814, minimum: 0.766, std: 0.049.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.766
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.863
+        }
+      ],
+      "error": null,
+      "latency_ms": 96.6
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.4,
+      "uncertainty": 0.156,
+      "interval": [
+        0.094,
+        0.706
+      ],
+      "explanation": "Negation terms found: ['no']. Positive sentiment (0.43) conflicts with negation markers.",
+      "evidence": [
+        {
+          "type": "negation_terms",
+          "found": [
+            "no"
+          ]
+        },
+        {
+          "type": "polarity_conflict",
+          "polarity": 0.433,
+          "note": "Positive sentiment (0.43) conflicts with negation markers."
+        }
+      ],
+      "error": null,
+      "latency_ms": 0.82
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.3,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.708
+      ],
+      "explanation": "Vagueness markers: ['things']. No numeric references found \u2014 grounding penalty applied.",
+      "evidence": [
+        {
+          "type": "vagueness_markers",
+          "found": [
+            "things"
+          ]
+        },
+        {
+          "type": "grounding_penalty",
+          "numeric_refs": 0
+        }
+      ],
+      "error": null,
+      "latency_ms": 0.06
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.27,
+      "interval": [
+        0.0,
+        0.53
+      ],
+      "explanation": "Reasoning markers: ['because', 'causes']. Circular reasoning detected (-0.60). Fake causality: ['proves that', 'this proves'] (-0.40).",
+      "evidence": [
+        {
+          "type": "reasoning_markers",
+          "found": [
+            "because",
+            "causes"
+          ]
+        },
+        {
+          "type": "circular_reasoning",
+          "penalty": 0.6
+        },
+        {
+          "type": "fake_causality",
+          "found": [
+            "proves that",
+            "this proves"
+          ],
+          "penalty": 0.4
+        }
+      ],
+      "error": null,
+      "latency_ms": 1.91
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "explanation": "Found 0 named entities, 0 numeric references, 0 date/time entities, 0 proper nouns across 35 tokens. Normalized density: 0.000. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 0,
+          "entities": []
+        },
+        {
+          "type": "numeric_references",
+          "count": 0
+        },
+        {
+          "type": "date_time_entities",
+          "count": 0
+        },
+        {
+          "type": "proper_nouns",
+          "count": 0,
+          "nouns": []
+        }
+      ],
+      "error": null,
+      "latency_ms": 45.64
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.814,
+      "uncertainty": 0.083,
+      "interval": [
+        0.651,
+        0.977
+      ],
+      "explanation": "Computed pairwise semantic similarity across 3 sentences (min length >10 chars). Average cosine similarity: 0.814, minimum: 0.766.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.766
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.863
+        }
+      ],
+      "error": null,
+      "latency_ms": 62.0
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.4,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.400 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.3,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.300 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.154,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

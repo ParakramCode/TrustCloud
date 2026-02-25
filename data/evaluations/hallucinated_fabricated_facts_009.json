@@ -1,0 +1,200 @@
+{
+  "input": {
+    "text": "The Kessler-Singh equation, published in Nature Physics in 2020, establishes a direct mathematical relationship between quantum decoherence rates and gravitational field strength, showing that decoherence time scales as t = h/(8\u03c0Gm\u00b2) where h is Planck's constant and G is the gravitational constant.",
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 9,
+      "topic": "fabricated_equation",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.72,
+    "confidence": 0.848,
+    "trust_level": "MEDIUM",
+    "defeated": false,
+    "interpretation": "Assessment indicates moderate epistemic trust (composite: 0.720). System confidence is high (0.848): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 1.0,
+      "uncertainty": 0.12,
+      "interval": [
+        0.765,
+        1.0
+      ],
+      "explanation": "Single sentence \u2014 coherence is trivially 1.0. High uncertainty due to insufficient data.",
+      "evidence": [
+        {
+          "type": "trivial_input",
+          "sentence_count": 1
+        }
+      ],
+      "error": null,
+      "latency_ms": 0.18
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.0,
+      "uncertainty": 0.15,
+      "interval": [
+        0.0,
+        0.294
+      ],
+      "explanation": "No contradiction indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 1.04
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.392
+      ],
+      "explanation": "No hallucination risk indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 0.04
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.392
+      ],
+      "explanation": "No reasoning structure detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 4.82
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 0.72,
+      "uncertainty": 0.12,
+      "interval": [
+        0.485,
+        0.955
+      ],
+      "explanation": "Found 3 named entities, 2 numeric references, 1 date/time entities, 7 proper nouns across 50 tokens. Normalized density: 0.072. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 3,
+          "entities": [
+            {
+              "text": "Kessler",
+              "label": "PERSON"
+            },
+            {
+              "text": "Nature Physics",
+              "label": "ORG"
+            },
+            {
+              "text": "2020",
+              "label": "DATE"
+            }
+          ]
+        },
+        {
+          "type": "numeric_references",
+          "count": 2
+        },
+        {
+          "type": "date_time_entities",
+          "count": 1
+        },
+        {
+          "type": "proper_nouns",
+          "count": 7,
+          "nouns": [
+            "Kessler",
+            "Singh",
+            "Nature",
+            "Physics",
+            "h/(8\u03c0Gm\u00b2",
+            "h",
+            "Planck"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 30.14
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 1.0,
+      "uncertainty": 0.12,
+      "interval": [
+        0.765,
+        1.0
+      ],
+      "explanation": "Single meaningful sentence \u2014 semantic consistency is trivially 1.0. Higher uncertainty due to insufficient data.",
+      "evidence": [
+        {
+          "type": "trivial_input",
+          "sentence_count": 1
+        }
+      ],
+      "error": null,
+      "latency_ms": 0.04
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.000 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.000 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.152,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

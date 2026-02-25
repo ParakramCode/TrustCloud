@@ -1,0 +1,108 @@
+{
+  "id": "c7184bf2-571f-4f07-8977-bbe20d902a28",
+  "timestamp": "2026-02-25T15:51:15.745448+00:00",
+  "input": {
+    "text": "I think that maybe the universe could possibly be expanding, although I believe it might not be. It seems like something is happening, but apparently nobody really knows what it is. Various sources suggest different things.",
+    "text_length": 223,
+    "metadata": {
+      "category": "low_quality",
+      "source_file": "vague_and_empty.json",
+      "sample_index": 4,
+      "topic": "excessive_hedging",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.109,
+    "confidence": 0.856,
+    "trust_level": "DEFEATED",
+    "defeated": true
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.179,
+      "uncertainty": 0.083,
+      "interval": [
+        0.016,
+        0.342
+      ],
+      "latency_ms": 98.86,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.6,
+      "uncertainty": 0.156,
+      "interval": [
+        0.294,
+        0.906
+      ],
+      "latency_ms": 0.89,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 1.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.592,
+        1.0
+      ],
+      "latency_ms": 0.07,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 2.29,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 78.39,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.179,
+      "uncertainty": 0.083,
+      "interval": [
+        0.016,
+        0.342
+      ],
+      "latency_ms": 91.2,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.6,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 1.0,
+      "active": true
+    }
+  ]
+}

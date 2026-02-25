@@ -1,0 +1,52 @@
+[
+    {
+        "text": "Some people think AI is maybe kind of important, possibly, but it could also not be. There are various things about it that might matter. Several experts have said stuff about this topic.",
+        "source": "curated",
+        "topic": "vague"
+    },
+    {
+        "text": "Things are changing in many ways. Various factors contribute to numerous outcomes. Several developments have led to different results across multiple areas. Many people have opinions about these various matters.",
+        "source": "curated",
+        "topic": "vague"
+    },
+    {
+        "text": "The situation is complex and involves many considerations. There are several aspects to think about. Different perspectives exist on this matter. It is important to consider various viewpoints when thinking about things like this.",
+        "source": "curated",
+        "topic": "vague"
+    },
+    {
+        "text": "Technology might possibly change everything completely forever. It could be that in the future, everything will be totally different. Some believe this is guaranteed to happen, while others think maybe it possibly won't.",
+        "source": "curated",
+        "topic": "hedging_with_absolutism"
+    },
+    {
+        "text": "I think that maybe the universe could possibly be expanding, although I believe it might not be. It seems like something is happening, but apparently nobody really knows what it is. Various sources suggest different things.",
+        "source": "curated",
+        "topic": "excessive_hedging"
+    },
+    {
+        "text": "Everyone knows that everything about quantum mechanics is completely settled. All scientists always agree on every aspect of quantum physics. There has never been any debate about any quantum phenomenon, and there never will be.",
+        "source": "curated",
+        "topic": "excessive_absolutism"
+    },
+    {
+        "text": "Stuff happens because of things. When various things occur in different situations, numerous outcomes result from the several factors involved. Many aspects of this are probably important, possibly, maybe.",
+        "source": "curated",
+        "topic": "meaningless"
+    },
+    {
+        "text": "AI will always be completely perfect in every way. Everyone agrees that AI never makes any mistakes. It is guaranteed that AI systems will solve everything and nothing bad will ever happen because of AI.",
+        "source": "curated",
+        "topic": "overconfident"
+    },
+    {
+        "text": "Large language models might perhaps potentially have some capabilities that could possibly be somewhat useful in certain situations under some conditions, although this is not entirely certain and may vary considerably.",
+        "source": "curated",
+        "topic": "excessive_hedging"
+    },
+    {
+        "text": "Multiple sources confirm that various things have various properties. Several studies show that some results exist. A number of researchers have found a lot of things about numerous topics in many fields.",
+        "source": "curated",
+        "topic": "empty_authority"
+    }
+]

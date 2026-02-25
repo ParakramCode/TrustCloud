@@ -1,0 +1,243 @@
+{
+  "input": {
+    "text": "Gravity pulls objects toward the Earth at approximately 9.8 metres per second squared. But gravity does not exist and objects have no tendency to fall. Newton proved both that gravity exists and that it never existed at all.",
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 8,
+      "topic": "physics_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.276,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false,
+    "interpretation": "Assessment indicates low epistemic trust (composite: 0.276). System confidence is high (0.852): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.307,
+      "uncertainty": 0.086,
+      "interval": [
+        0.138,
+        0.476
+      ],
+      "explanation": "Measured cosine similarity between 4 adjacent sentence pairs. Average similarity: 0.307, minimum: 0.113, std: 0.191.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.241
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.113
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 2,
+          "similarity": 0.567
+        }
+      ],
+      "error": null,
+      "latency_ms": 96.68
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.45,
+      "uncertainty": 0.16,
+      "interval": [
+        0.136,
+        0.764
+      ],
+      "explanation": "Contradiction markers found: ['but']. Negation terms found: ['not', 'never', 'no'].",
+      "evidence": [
+        {
+          "type": "contradiction_markers",
+          "found": [
+            "but"
+          ]
+        },
+        {
+          "type": "negation_terms",
+          "found": [
+            "not",
+            "never",
+            "no"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 0.92
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.1,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.519
+      ],
+      "explanation": "Absolutism markers: ['never'].",
+      "evidence": [
+        {
+          "type": "absolutism_markers",
+          "found": [
+            "never"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 0.06
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "explanation": "No reasoning structure detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 2.04
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 0.537,
+      "uncertainty": 0.128,
+      "interval": [
+        0.286,
+        0.788
+      ],
+      "explanation": "Found 4 named entities, 2 numeric references, 0 date/time entities, 2 proper nouns across 41 tokens. Normalized density: 0.054. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 4,
+          "entities": [
+            {
+              "text": "Earth",
+              "label": "LOC"
+            },
+            {
+              "text": "approximately 9.8 metres",
+              "label": "QUANTITY"
+            },
+            {
+              "text": "second",
+              "label": "ORDINAL"
+            },
+            {
+              "text": "Newton",
+              "label": "ORG"
+            }
+          ]
+        },
+        {
+          "type": "numeric_references",
+          "count": 2
+        },
+        {
+          "type": "date_time_entities",
+          "count": 0
+        },
+        {
+          "type": "proper_nouns",
+          "count": 2,
+          "nouns": [
+            "Earth",
+            "Newton"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 54.2
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.307,
+      "uncertainty": 0.086,
+      "interval": [
+        0.138,
+        0.476
+      ],
+      "explanation": "Computed pairwise semantic similarity across 4 sentences (min length >10 chars). Average cosine similarity: 0.307, minimum: 0.113.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.241
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.113
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 2,
+          "similarity": 0.567
+        }
+      ],
+      "error": null,
+      "latency_ms": 79.5
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.45,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.450 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.1,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.100 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.148,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

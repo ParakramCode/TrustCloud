@@ -1,0 +1,62 @@
+[
+    {
+        "text": "According to a 2024 study by the International Bureau of Atmospheric Research, cloud formations in the stratosphere directly regulate 78.3 percent of global ocean currents. Dr. Helena Marchetti of the Vienna Institute confirmed these findings using spectral resonance imaging at a resolution of 0.003 nanometres.",
+        "source": "curated",
+        "topic": "fabricated_institution"
+    },
+    {
+        "text": "The city of Nordvallen, located 340 kilometres north of Stockholm, has a population of 127,500 and is known for its unique geological formation called the Kristallen Arch, a 900-metre natural bridge formed during the last ice age approximately 11,400 years ago.",
+        "source": "curated",
+        "topic": "fabricated_place"
+    },
+    {
+        "text": "Research published in the Journal of Computational Neurolinguistics in March 2025 showed that transformer-based language models exhibit a phenomenon called semantic crystallisation, where attention heads form stable geometric patterns after processing exactly 47 tokens. The study analysed 2.3 million model activations across 14 architectures.",
+        "source": "curated",
+        "topic": "fabricated_research"
+    },
+    {
+        "text": "The Brennan-Okafor theorem, established in 1987, proves that any polynomial-time algorithm for graph isomorphism must use at least O(n log log n) space. This theorem was a direct consequence of the Ramirez conjecture, first proposed at the 1983 Tokyo Conference on Discrete Mathematics.",
+        "source": "curated",
+        "topic": "fabricated_theorem"
+    },
+    {
+        "text": "Studies show that 67.4 percent of adults who consume more than 3 cups of green tea daily experience a 23.8 percent reduction in cortisol levels within 14 days. This was confirmed by meta-analysis of 42 randomised controlled trials published in the Lancet Nutrition in September 2024.",
+        "source": "curated",
+        "topic": "fabricated_statistics"
+    },
+    {
+        "text": "The mineral pyrovanadate, discovered in the Atacama Desert in 2019, has a unique crystal structure that allows it to absorb electromagnetic radiation at exactly 432.7 nanometres. This property has led to its use in next-generation solar panels, achieving energy conversion efficiency of 41.2 percent in laboratory conditions.",
+        "source": "curated",
+        "topic": "fabricated_substance"
+    },
+    {
+        "text": "The Harmon Protocol, adopted by the European Computing Standards Organisation in 2021, mandates that all distributed systems operating within EU jurisdiction must implement triple-redundant consensus mechanisms with a maximum latency tolerance of 12 milliseconds per node.",
+        "source": "curated",
+        "topic": "fabricated_standard"
+    },
+    {
+        "text": "Professor James Whitfield of the Cambridge Centre for Ethical AI demonstrated in his 2023 paper that large language models trained on datasets exceeding 1.7 trillion tokens develop emergent moral reasoning capabilities measurable through the Whitfield Ethics Index, which scores moral coherence on a scale of -3 to +3.",
+        "source": "curated",
+        "topic": "fabricated_researcher"
+    },
+    {
+        "text": "Approximately 89 percent of deepwater fish species in the Mariana Trench produce bioluminescent proteins that oscillate at a frequency of 340 hertz, creating a visible pulsing effect detectable at depths below 8,000 metres. This was documented during the Kuroda Deep Sea Expedition of 2022.",
+        "source": "curated",
+        "topic": "fabricated_discovery"
+    },
+    {
+        "text": "The Kessler-Singh equation, published in Nature Physics in 2020, establishes a direct mathematical relationship between quantum decoherence rates and gravitational field strength, showing that decoherence time scales as t = h/(8πGm²) where h is Planck's constant and G is the gravitational constant.",
+        "source": "curated",
+        "topic": "fabricated_equation"
+    },
+    {
+        "text": "A survey by the Global Digital Literacy Foundation found that 73.2 percent of university students in 28 countries prefer AI-generated study materials over traditional textbooks, with satisfaction rates highest in South Korea at 91.4 percent and lowest in Germany at 54.7 percent.",
+        "source": "curated",
+        "topic": "fabricated_survey"
+    },
+    {
+        "text": "The antiviral compound methylguanidine-7, synthesised at the Osaka Institute of Pharmaceutical Sciences in 2024, has shown a 94.6 percent efficacy rate against RNA viruses in phase II clinical trials involving 1,200 participants across 8 countries.",
+        "source": "curated",
+        "topic": "fabricated_drug"
+    }
+]

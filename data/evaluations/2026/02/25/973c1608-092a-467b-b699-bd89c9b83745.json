@@ -1,0 +1,108 @@
+{
+  "id": "973c1608-092a-467b-b699-bd89c9b83745",
+  "timestamp": "2026-02-25T15:51:22.804674+00:00",
+  "input": {
+    "text": "The James Webb Space Telescope, launched on December 25, 2021, is the most powerful space telescope ever built. It observes in infrared wavelengths and has a 6.5-metre primary mirror composed of 18 hexagonal segments. JWST orbits the Sun at the L2 Lagrange point, approximately 1.5 million kilometres from Earth. It has already provided unprecedented images of distant galaxies, exoplanet atmospheres, and stellar nurseries.",
+    "text_length": 424,
+    "metadata": {
+      "category": "mixed",
+      "source_file": "realistic_llm_outputs.json",
+      "sample_index": 10,
+      "topic": "factual_reporting",
+      "source": "simulated_llm"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.271,
+    "confidence": 0.847,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.216,
+      "uncertainty": 0.089,
+      "interval": [
+        0.042,
+        0.39
+      ],
+      "latency_ms": 167.79,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.166,
+      "interval": [
+        0.0,
+        0.325
+      ],
+      "latency_ms": 1.92,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.222,
+      "interval": [
+        0.0,
+        0.435
+      ],
+      "latency_ms": 0.08,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.222,
+      "interval": [
+        0.0,
+        0.435
+      ],
+      "latency_ms": 18.1,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.84,
+      "uncertainty": 0.133,
+      "interval": [
+        0.579,
+        1.0
+      ],
+      "latency_ms": 101.21,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.216,
+      "uncertainty": 0.089,
+      "interval": [
+        0.042,
+        0.39
+      ],
+      "latency_ms": 146.8,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

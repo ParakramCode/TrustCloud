@@ -11,6 +11,16 @@ from validators.base import BaseValidator
 logger = logging.getLogger("trustcloud.registry")
 
 
+# Common name aliases so users don't have to guess exact names
+_ALIASES: Dict[str, str] = {
+    "factuality": "factual_density",
+    "factual": "factual_density",
+    "hallucination": "hallucination_risk",
+    "reasoning": "reasoning_depth",
+    "semantic": "semantic_consistency",
+}
+
+
 class ValidatorRegistry:
     """
     Central registry for all validators.
@@ -18,13 +28,17 @@ class ValidatorRegistry:
     Responsibilities:
     - Register validator classes or instances
     - Auto-discover built-in validators
-    - Provide lookup by name
+    - Provide lookup by name (with alias resolution)
     - Enforce uniqueness (no duplicate names)
     - List all registered validators with metadata
     """
 
     def __init__(self):
         self._validators: Dict[str, BaseValidator] = {}
+
+    def _resolve(self, name: str) -> str:
+        """Resolve a validator name, checking aliases."""
+        return _ALIASES.get(name, name)
 
     def register(self, validator: BaseValidator) -> None:
         """
@@ -50,8 +64,8 @@ class ValidatorRegistry:
         self.register(cls())
 
     def get(self, name: str) -> Optional[BaseValidator]:
-        """Get a validator by name. Returns None if not found."""
-        return self._validators.get(name)
+        """Get a validator by name (with alias resolution). Returns None if not found."""
+        return self._validators.get(self._resolve(name))
 
     def get_many(self, names: List[str]) -> List[BaseValidator]:
         """
@@ -62,7 +76,8 @@ class ValidatorRegistry:
         """
         result = []
         for name in names:
-            v = self._validators.get(name)
+            resolved = self._resolve(name)
+            v = self._validators.get(resolved)
             if v is None:
                 available = list(self._validators.keys())
                 raise KeyError(
@@ -110,4 +125,4 @@ class ValidatorRegistry:
         return len(self._validators)
 
     def __contains__(self, name: str) -> bool:
-        return name in self._validators
+        return self._resolve(name) in self._validators

@@ -1,0 +1,108 @@
+{
+  "id": "1e5a9c3c-4b3b-4975-887c-8c06f8d1ed5b",
+  "timestamp": "2026-02-25T15:50:59.627407+00:00",
+  "input": {
+    "text": "The Earth is approximately 4.5 billion years old, yet the Earth was formed only 6,000 years ago. Geological evidence supports both timelines simultaneously, proving that the Earth is both ancient and very young.",
+    "text_length": 211,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 6,
+      "topic": "geology_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.501,
+    "confidence": 0.856,
+    "trust_level": "MEDIUM",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.572,
+      "uncertainty": 0.083,
+      "interval": [
+        0.409,
+        0.735
+      ],
+      "latency_ms": 109.91,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.15,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.456
+      ],
+      "latency_ms": 1.94,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 0.05,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 2.8,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.919,
+      "uncertainty": 0.125,
+      "interval": [
+        0.674,
+        1.0
+      ],
+      "latency_ms": 47.92,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.572,
+      "uncertainty": 0.083,
+      "interval": [
+        0.409,
+        0.735
+      ],
+      "latency_ms": 92.42,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.15,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "1df2a81b-a0d3-435e-a214-3b6ae6e97e1d",
+  "timestamp": "2026-02-25T15:51:18.237276+00:00",
+  "input": {
+    "text": "GPT-4 is a large language model developed by OpenAI. While it demonstrates impressive capabilities in natural language understanding and generation, it is not without limitations. The model can produce plausible-sounding but incorrect information, particularly when asked about recent events or highly specialised domains. Users should verify critical information from primary sources.",
+    "text_length": 385,
+    "metadata": {
+      "category": "mixed",
+      "source_file": "realistic_llm_outputs.json",
+      "sample_index": 0,
+      "topic": "ai_self_description",
+      "source": "simulated_llm"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.226,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.307,
+      "uncertainty": 0.086,
+      "interval": [
+        0.138,
+        0.476
+      ],
+      "latency_ms": 112.21,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.35,
+      "uncertainty": 0.16,
+      "interval": [
+        0.036,
+        0.664
+      ],
+      "latency_ms": 1.14,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 0.07,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 15.05,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.237,
+      "uncertainty": 0.128,
+      "interval": [
+        0.0,
+        0.488
+      ],
+      "latency_ms": 87.77,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.307,
+      "uncertainty": 0.086,
+      "interval": [
+        0.138,
+        0.476
+      ],
+      "latency_ms": 90.91,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.35,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

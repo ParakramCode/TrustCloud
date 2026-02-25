@@ -1,0 +1,108 @@
+{
+  "id": "77e654ba-d9cc-4643-b7e2-1b0d8851e042",
+  "timestamp": "2026-02-25T15:50:59.185176+00:00",
+  "input": {
+    "text": "Climate change is caused by human activities, primarily the burning of fossil fuels. But climate change is not caused by human activities at all. Scientists have conclusively shown that humans are both entirely responsible and have no influence whatsoever on climate change.",
+    "text_length": 274,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 5,
+      "topic": "environment_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.422,
+    "confidence": 0.856,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.694,
+      "uncertainty": 0.083,
+      "interval": [
+        0.531,
+        0.857
+      ],
+      "latency_ms": 102.63,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.35,
+      "uncertainty": 0.156,
+      "interval": [
+        0.044,
+        0.656
+      ],
+      "latency_ms": 0.82,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.608
+      ],
+      "latency_ms": 0.05,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 3.37,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 49.21,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.694,
+      "uncertainty": 0.083,
+      "interval": [
+        0.531,
+        0.857
+      ],
+      "latency_ms": 84.61,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.35,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

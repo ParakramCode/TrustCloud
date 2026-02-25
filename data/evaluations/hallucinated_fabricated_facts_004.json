@@ -1,0 +1,239 @@
+{
+  "input": {
+    "text": "Studies show that 67.4 percent of adults who consume more than 3 cups of green tea daily experience a 23.8 percent reduction in cortisol levels within 14 days. This was confirmed by meta-analysis of 42 randomised controlled trials published in the Lancet Nutrition in September 2024.",
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 4,
+      "topic": "fabricated_statistics",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.337,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false,
+    "interpretation": "Assessment indicates low epistemic trust (composite: 0.337). System confidence is high (0.852): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.28,
+      "uncertainty": 0.086,
+      "interval": [
+        0.111,
+        0.449
+      ],
+      "explanation": "Measured cosine similarity between 4 adjacent sentence pairs. Average similarity: 0.280, minimum: 0.204, std: 0.053.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.317
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.204
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 2,
+          "similarity": 0.317
+        }
+      ],
+      "error": null,
+      "latency_ms": 99.78
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.0,
+      "uncertainty": 0.16,
+      "interval": [
+        0.0,
+        0.314
+      ],
+      "explanation": "No contradiction indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 1.5
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "explanation": "No hallucination risk indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 0.06
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "explanation": "No reasoning structure detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 3.28
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 1.0,
+      "uncertainty": 0.128,
+      "interval": [
+        0.749,
+        1.0
+      ],
+      "explanation": "Found 8 named entities, 8 numeric references, 3 date/time entities, 4 proper nouns across 50 tokens. Normalized density: 0.116. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 8,
+          "entities": [
+            {
+              "text": "67.4 percent",
+              "label": "PERCENT"
+            },
+            {
+              "text": "more than 3",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "daily",
+              "label": "DATE"
+            },
+            {
+              "text": "23.8 percent",
+              "label": "PERCENT"
+            },
+            {
+              "text": "14 days",
+              "label": "DATE"
+            },
+            {
+              "text": "42",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "the Lancet Nutrition",
+              "label": "FAC"
+            },
+            {
+              "text": "September 2024",
+              "label": "DATE"
+            }
+          ]
+        },
+        {
+          "type": "numeric_references",
+          "count": 8
+        },
+        {
+          "type": "date_time_entities",
+          "count": 3
+        },
+        {
+          "type": "proper_nouns",
+          "count": 4,
+          "nouns": [
+            "tea",
+            "Lancet",
+            "Nutrition",
+            "September"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 68.91
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.28,
+      "uncertainty": 0.086,
+      "interval": [
+        0.111,
+        0.449
+      ],
+      "explanation": "Computed pairwise semantic similarity across 4 sentences (min length >10 chars). Average cosine similarity: 0.280, minimum: 0.204.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.317
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 1,
+          "similarity": 0.204
+        },
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 2,
+          "similarity": 0.317
+        }
+      ],
+      "error": null,
+      "latency_ms": 108.27
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.000 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.000 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.148,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

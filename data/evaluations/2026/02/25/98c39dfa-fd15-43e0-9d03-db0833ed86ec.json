@@ -1,0 +1,108 @@
+{
+  "id": "98c39dfa-fd15-43e0-9d03-db0833ed86ec",
+  "timestamp": "2026-02-25T15:51:09.075306+00:00",
+  "input": {
+    "text": "DNA replication is a semi-conservative process in which each strand of the double helix serves as a template for a new complementary strand. The enzyme helicase unwinds the double helix, and DNA polymerase synthesises new strands by adding nucleotides complementary to the template. This ensures that each daughter cell receives an identical copy of the genetic information.",
+    "text_length": 374,
+    "metadata": {
+      "category": "high_trust",
+      "source_file": "science_and_facts.json",
+      "sample_index": 4,
+      "topic": "biology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.296,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.439,
+      "uncertainty": 0.108,
+      "interval": [
+        0.228,
+        0.65
+      ],
+      "latency_ms": 164.65,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.306
+      ],
+      "latency_ms": 1.02,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.608
+      ],
+      "latency_ms": 0.09,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.1,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.508
+      ],
+      "latency_ms": 6.9,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.048,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.293
+      ],
+      "latency_ms": 55.37,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.439,
+      "uncertainty": 0.083,
+      "interval": [
+        0.276,
+        0.602
+      ],
+      "latency_ms": 143.94,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

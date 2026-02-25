@@ -1,0 +1,222 @@
+{
+  "input": {
+    "text": "Ohm's law states that the current through a conductor between two points is directly proportional to the voltage across the two points, expressed as V = IR, where V is voltage, I is current, and R is resistance. This relationship was first described by Georg Simon Ohm in 1827 and remains fundamental to electrical circuit analysis.",
+    "metadata": {
+      "category": "high_trust",
+      "source_file": "science_and_facts.json",
+      "sample_index": 8,
+      "topic": "physics",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "composite_trust": 0.385,
+    "confidence": 0.862,
+    "trust_level": "LOW",
+    "defeated": false,
+    "interpretation": "Assessment indicates low epistemic trust (composite: 0.385). System confidence is high (0.862): 6/6 validators succeeded. Note: This assessment evaluates textual properties only. Factual correctness of specific claims has not been independently verified."
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.409,
+      "uncertainty": 0.08,
+      "interval": [
+        0.252,
+        0.566
+      ],
+      "explanation": "Measured cosine similarity between 2 adjacent sentence pairs. Average similarity: 0.409, minimum: 0.409, std: 0.000.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.409
+        }
+      ],
+      "error": null,
+      "latency_ms": 108.78
+    },
+    {
+      "name": "contradiction",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "sentiment_analysis",
+      "score": 0.0,
+      "uncertainty": 0.15,
+      "interval": [
+        0.0,
+        0.294
+      ],
+      "explanation": "No contradiction indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 0.82
+    },
+    {
+      "name": "hallucination_risk",
+      "version": "v1.0",
+      "signal_type": "defeater",
+      "method_type": "keyword_heuristic",
+      "score": 0.0,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.392
+      ],
+      "explanation": "No hallucination risk indicators detected.",
+      "evidence": [],
+      "error": null,
+      "latency_ms": 0.06
+    },
+    {
+      "name": "reasoning_depth",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "keyword_heuristic",
+      "score": 0.1,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.492
+      ],
+      "explanation": "Multi-step chain markers: ['first'] (+0.10).",
+      "evidence": [
+        {
+          "type": "chain_markers",
+          "found": [
+            "first"
+          ],
+          "bonus": 0.1
+        }
+      ],
+      "error": null,
+      "latency_ms": 6.54
+    },
+    {
+      "name": "factual_density",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "nlp_pipeline",
+      "score": 0.683,
+      "uncertainty": 0.12,
+      "interval": [
+        0.448,
+        0.918
+      ],
+      "explanation": "Found 6 named entities, 1 numeric references, 1 date/time entities, 7 proper nouns across 63 tokens. Normalized density: 0.068. NOTE: Factual density measures density of factual REFERENCES, not factual ACCURACY.",
+      "evidence": [
+        {
+          "type": "named_entities",
+          "count": 6,
+          "entities": [
+            {
+              "text": "Ohm",
+              "label": "ORG"
+            },
+            {
+              "text": "two",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "two",
+              "label": "CARDINAL"
+            },
+            {
+              "text": "first",
+              "label": "ORDINAL"
+            },
+            {
+              "text": "Georg Simon Ohm",
+              "label": "ORG"
+            },
+            {
+              "text": "1827",
+              "label": "DATE"
+            }
+          ]
+        },
+        {
+          "type": "numeric_references",
+          "count": 1
+        },
+        {
+          "type": "date_time_entities",
+          "count": 1
+        },
+        {
+          "type": "proper_nouns",
+          "count": 7,
+          "nouns": [
+            "Ohm",
+            "V",
+            "IR",
+            "V",
+            "Georg",
+            "Simon",
+            "Ohm"
+          ]
+        }
+      ],
+      "error": null,
+      "latency_ms": 83.11
+    },
+    {
+      "name": "semantic_consistency",
+      "version": "v1.0",
+      "signal_type": "positive_indicator",
+      "method_type": "embedding_similarity",
+      "score": 0.409,
+      "uncertainty": 0.08,
+      "interval": [
+        0.252,
+        0.566
+      ],
+      "explanation": "Computed pairwise semantic similarity across 2 sentences (min length >10 chars). Average cosine similarity: 0.409, minimum: 0.409.",
+      "evidence": [
+        {
+          "type": "pairwise_similarity",
+          "pair_index": 0,
+          "similarity": 0.409
+        }
+      ],
+      "error": null,
+      "latency_ms": 113.56
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: contradiction severity 0.000 is below threshold 0.7."
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "threshold": 0.7,
+      "active": false,
+      "explanation": "CLEAR: hallucination_risk severity 0.000 is below threshold 0.7."
+    }
+  ],
+  "confidence_factors": {
+    "validator_success_rate": 1.0,
+    "mean_uncertainty": 0.138,
+    "input_quality": 1.0,
+    "dimension_coverage": 1.0
+  },
+  "engine_version": "trust-engine-v1",
+  "validators_run": 6,
+  "validators_failed": 0,
+  "blind_spots": [
+    "Factual accuracy of specific claims is not verified against external knowledge bases or databases.",
+    "Source attribution and citation validity are not assessed.",
+    "Domain-specific correctness is not evaluated (no domain expert model).",
+    "Temporal validity is not checked \u2014 claims may be outdated.",
+    "Cultural and contextual appropriateness is not measured.",
+    "Intentional deception by the text author cannot be detected if the text is internally consistent."
+  ]
+}

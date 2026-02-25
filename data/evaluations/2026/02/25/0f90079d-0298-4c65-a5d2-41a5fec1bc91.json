@@ -1,0 +1,108 @@
+{
+  "id": "0f90079d-0298-4c65-a5d2-41a5fec1bc91",
+  "timestamp": "2026-02-25T15:50:54.871407+00:00",
+  "input": {
+    "text": "Trust in AI systems is important because we need to trust AI systems. The reason trust matters is that without trust, there would be no trust. Building trust requires that trust be built.",
+    "text_length": 187,
+    "metadata": {
+      "category": "circular",
+      "source_file": "tautologies.json",
+      "sample_index": 5,
+      "topic": "tautology",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.489,
+    "confidence": 0.856,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.66,
+      "uncertainty": 0.083,
+      "interval": [
+        0.497,
+        0.823
+      ],
+      "latency_ms": 153.09,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.4,
+      "uncertainty": 0.156,
+      "interval": [
+        0.094,
+        0.706
+      ],
+      "latency_ms": 1.13,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.608
+      ],
+      "latency_ms": 0.09,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.15,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.558
+      ],
+      "latency_ms": 2.78,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.324,
+      "uncertainty": 0.125,
+      "interval": [
+        0.079,
+        0.569
+      ],
+      "latency_ms": 61.42,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.66,
+      "uncertainty": 0.083,
+      "interval": [
+        0.497,
+        0.823
+      ],
+      "latency_ms": 134.59,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.4,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

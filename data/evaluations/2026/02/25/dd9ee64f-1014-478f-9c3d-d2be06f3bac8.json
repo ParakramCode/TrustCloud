@@ -1,0 +1,108 @@
+{
+  "id": "dd9ee64f-1014-478f-9c3d-d2be06f3bac8",
+  "timestamp": "2026-02-25T15:50:58.762429+00:00",
+  "input": {
+    "text": "Python is the most popular programming language in data science. However, nobody uses Python for data science. The community universally agrees that Python is both dominant and entirely absent from the data science ecosystem.",
+    "text_length": 225,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 4,
+      "topic": "technology_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.535,
+    "confidence": 0.856,
+    "trust_level": "MEDIUM",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.814,
+      "uncertainty": 0.083,
+      "interval": [
+        0.651,
+        0.977
+      ],
+      "latency_ms": 105.14,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.35,
+      "uncertainty": 0.156,
+      "interval": [
+        0.044,
+        0.656
+      ],
+      "latency_ms": 1.31,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.2,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.608
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 4.13,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.237,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.482
+      ],
+      "latency_ms": 54.56,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.814,
+      "uncertainty": 0.083,
+      "interval": [
+        0.651,
+        0.977
+      ],
+      "latency_ms": 112.97,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.35,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.2,
+      "active": false
+    }
+  ]
+}

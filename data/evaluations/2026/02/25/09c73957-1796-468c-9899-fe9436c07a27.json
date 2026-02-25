@@ -1,0 +1,108 @@
+{
+  "id": "09c73957-1796-468c-9899-fe9436c07a27",
+  "timestamp": "2026-02-25T15:51:05.565559+00:00",
+  "input": {
+    "text": "Approximately 89 percent of deepwater fish species in the Mariana Trench produce bioluminescent proteins that oscillate at a frequency of 340 hertz, creating a visible pulsing effect detectable at depths below 8,000 metres. This was documented during the Kuroda Deep Sea Expedition of 2022.",
+    "text_length": 290,
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 8,
+      "topic": "fabricated_discovery",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.338,
+    "confidence": 0.862,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.295,
+      "uncertainty": 0.08,
+      "interval": [
+        0.138,
+        0.452
+      ],
+      "latency_ms": 88.4,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.15,
+      "interval": [
+        0.0,
+        0.294
+      ],
+      "latency_ms": 0.74,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.392
+      ],
+      "latency_ms": 0.07,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.2,
+      "interval": [
+        0.0,
+        0.392
+      ],
+      "latency_ms": 3.86,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.957,
+      "uncertainty": 0.12,
+      "interval": [
+        0.722,
+        1.0
+      ],
+      "latency_ms": 70.25,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.295,
+      "uncertainty": 0.08,
+      "interval": [
+        0.138,
+        0.452
+      ],
+      "latency_ms": 83.95,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "3c9709de-bfdc-4b01-8c16-054589d378ca",
+  "timestamp": "2026-02-25T15:51:17.809460+00:00",
+  "input": {
+    "text": "Multiple sources confirm that various things have various properties. Several studies show that some results exist. A number of researchers have found a lot of things about numerous topics in many fields.",
+    "text_length": 204,
+    "metadata": {
+      "category": "low_quality",
+      "source_file": "vague_and_empty.json",
+      "sample_index": 9,
+      "topic": "empty_authority",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.265,
+    "confidence": 0.856,
+    "trust_level": "DEFEATED",
+    "defeated": true
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.435,
+      "uncertainty": 0.083,
+      "interval": [
+        0.272,
+        0.598
+      ],
+      "latency_ms": 84.37,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.156,
+      "interval": [
+        0.0,
+        0.306
+      ],
+      "latency_ms": 0.57,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 1.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.592,
+        1.0
+      ],
+      "latency_ms": 0.1,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.408
+      ],
+      "latency_ms": 1.72,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 58.19,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.435,
+      "uncertainty": 0.083,
+      "interval": [
+        0.272,
+        0.598
+      ],
+      "latency_ms": 98.7,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 1.0,
+      "active": true
+    }
+  ]
+}

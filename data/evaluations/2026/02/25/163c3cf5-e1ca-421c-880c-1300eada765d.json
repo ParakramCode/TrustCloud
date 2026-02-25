@@ -1,0 +1,108 @@
+{
+  "id": "163c3cf5-e1ca-421c-880c-1300eada765d",
+  "timestamp": "2026-02-25T15:51:00.472014+00:00",
+  "input": {
+    "text": "Gravity pulls objects toward the Earth at approximately 9.8 metres per second squared. But gravity does not exist and objects have no tendency to fall. Newton proved both that gravity exists and that it never existed at all.",
+    "text_length": 224,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 8,
+      "topic": "physics_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.276,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.307,
+      "uncertainty": 0.086,
+      "interval": [
+        0.138,
+        0.476
+      ],
+      "latency_ms": 96.68,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.45,
+      "uncertainty": 0.16,
+      "interval": [
+        0.136,
+        0.764
+      ],
+      "latency_ms": 0.92,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.1,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.519
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 2.04,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.537,
+      "uncertainty": 0.128,
+      "interval": [
+        0.286,
+        0.788
+      ],
+      "latency_ms": 54.2,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.307,
+      "uncertainty": 0.086,
+      "interval": [
+        0.138,
+        0.476
+      ],
+      "latency_ms": 79.5,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.45,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.1,
+      "active": false
+    }
+  ]
+}

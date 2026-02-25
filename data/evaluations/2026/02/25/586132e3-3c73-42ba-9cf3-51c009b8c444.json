@@ -1,0 +1,108 @@
+{
+  "id": "586132e3-3c73-42ba-9cf3-51c009b8c444",
+  "timestamp": "2026-02-25T15:51:20.946289+00:00",
+  "input": {
+    "text": "CRISPR-Cas9 is a gene editing technology that allows precise modifications to DNA sequences. Discovered as part of the bacterial immune system, it was adapted for genome editing by Jennifer Doudna and Emmanuelle Charpentier, who received the 2020 Nobel Prize in Chemistry. Applications include treating genetic diseases, improving crop resistance, and studying gene function. Ethical concerns exist regarding germline editing in humans.",
+    "text_length": 436,
+    "metadata": {
+      "category": "mixed",
+      "source_file": "realistic_llm_outputs.json",
+      "sample_index": 6,
+      "topic": "science_with_ethics",
+      "source": "simulated_llm"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.309,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.311,
+      "uncertainty": 0.086,
+      "interval": [
+        0.142,
+        0.48
+      ],
+      "latency_ms": 122.17,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.4,
+      "uncertainty": 0.16,
+      "interval": [
+        0.086,
+        0.714
+      ],
+      "latency_ms": 1.14,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 0.07,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 8.08,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.718,
+      "uncertainty": 0.128,
+      "interval": [
+        0.467,
+        0.969
+      ],
+      "latency_ms": 76.32,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.311,
+      "uncertainty": 0.086,
+      "interval": [
+        0.142,
+        0.48
+      ],
+      "latency_ms": 97.84,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.4,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}

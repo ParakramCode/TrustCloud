@@ -1,0 +1,108 @@
+{
+  "id": "fc54f63e-bc67-43c1-b0ac-62ae69490a0c",
+  "timestamp": "2026-02-25T15:51:14.900997+00:00",
+  "input": {
+    "text": "The situation is complex and involves many considerations. There are several aspects to think about. Different perspectives exist on this matter. It is important to consider various viewpoints when thinking about things like this.",
+    "text_length": 230,
+    "metadata": {
+      "category": "low_quality",
+      "source_file": "vague_and_empty.json",
+      "sample_index": 2,
+      "topic": "vague",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.318,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.522,
+      "uncertainty": 0.086,
+      "interval": [
+        0.353,
+        0.691
+      ],
+      "latency_ms": 77.84,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.16,
+      "interval": [
+        0.0,
+        0.314
+      ],
+      "latency_ms": 0.66,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.6,
+      "uncertainty": 0.214,
+      "interval": [
+        0.181,
+        1.0
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 2.35,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.128,
+      "interval": [
+        0.0,
+        0.251
+      ],
+      "latency_ms": 64.29,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.522,
+      "uncertainty": 0.086,
+      "interval": [
+        0.353,
+        0.691
+      ],
+      "latency_ms": 91.3,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.0,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.6,
+      "active": false
+    }
+  ]
+}

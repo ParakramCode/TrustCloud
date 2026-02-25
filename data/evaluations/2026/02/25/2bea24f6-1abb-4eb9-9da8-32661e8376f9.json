@@ -1,0 +1,108 @@
+{
+  "id": "2bea24f6-1abb-4eb9-9da8-32661e8376f9",
+  "timestamp": "2026-02-25T15:50:57.882653+00:00",
+  "input": {
+    "text": "Democracy is the best form of government because it gives power to the people. On the other hand, democracy is the worst form of government because people cannot be trusted with power. Nevertheless, everyone agrees democracy is both perfect and fundamentally broken.",
+    "text_length": 266,
+    "metadata": {
+      "category": "contradictory",
+      "source_file": "self_contradictions.json",
+      "sample_index": 2,
+      "topic": "politics_contradiction",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.459,
+    "confidence": 0.856,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.698,
+      "uncertainty": 0.083,
+      "interval": [
+        0.535,
+        0.861
+      ],
+      "latency_ms": 103.44,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.6,
+      "uncertainty": 0.156,
+      "interval": [
+        0.294,
+        0.906
+      ],
+      "latency_ms": 1.77,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.4,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.808
+      ],
+      "latency_ms": 0.07,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.15,
+      "uncertainty": 0.208,
+      "interval": [
+        0.0,
+        0.558
+      ],
+      "latency_ms": 3.1,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.0,
+      "uncertainty": 0.125,
+      "interval": [
+        0.0,
+        0.245
+      ],
+      "latency_ms": 53.97,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.698,
+      "uncertainty": 0.083,
+      "interval": [
+        0.535,
+        0.861
+      ],
+      "latency_ms": 96.89,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.6,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.4,
+      "active": false
+    }
+  ]
+}

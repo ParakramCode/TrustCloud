@@ -1,0 +1,108 @@
+{
+  "id": "53fe48ae-47bb-45ad-bc97-8793a1350612",
+  "timestamp": "2026-02-25T15:51:04.377081+00:00",
+  "input": {
+    "text": "The mineral pyrovanadate, discovered in the Atacama Desert in 2019, has a unique crystal structure that allows it to absorb electromagnetic radiation at exactly 432.7 nanometres. This property has led to its use in next-generation solar panels, achieving energy conversion efficiency of 41.2 percent in laboratory conditions.",
+    "text_length": 325,
+    "metadata": {
+      "category": "hallucinated",
+      "source_file": "fabricated_facts.json",
+      "sample_index": 5,
+      "topic": "fabricated_substance",
+      "source": "curated"
+    }
+  },
+  "assessment": {
+    "engine_version": "trust-engine-v1",
+    "composite_trust": 0.22,
+    "confidence": 0.852,
+    "trust_level": "LOW",
+    "defeated": false
+  },
+  "dimensions": [
+    {
+      "name": "coherence",
+      "signal_type": "positive_indicator",
+      "score": 0.172,
+      "uncertainty": 0.086,
+      "interval": [
+        0.003,
+        0.341
+      ],
+      "latency_ms": 126.38,
+      "error": null
+    },
+    {
+      "name": "contradiction",
+      "signal_type": "defeater",
+      "score": 0.4,
+      "uncertainty": 0.16,
+      "interval": [
+        0.086,
+        0.714
+      ],
+      "latency_ms": 1.15,
+      "error": null
+    },
+    {
+      "name": "hallucination_risk",
+      "signal_type": "defeater",
+      "score": 0.0,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.419
+      ],
+      "latency_ms": 0.06,
+      "error": null
+    },
+    {
+      "name": "reasoning_depth",
+      "signal_type": "positive_indicator",
+      "score": 0.1,
+      "uncertainty": 0.214,
+      "interval": [
+        0.0,
+        0.519
+      ],
+      "latency_ms": 5.43,
+      "error": null
+    },
+    {
+      "name": "factual_density",
+      "signal_type": "positive_indicator",
+      "score": 0.556,
+      "uncertainty": 0.128,
+      "interval": [
+        0.305,
+        0.807
+      ],
+      "latency_ms": 68.64,
+      "error": null
+    },
+    {
+      "name": "semantic_consistency",
+      "signal_type": "positive_indicator",
+      "score": 0.172,
+      "uncertainty": 0.086,
+      "interval": [
+        0.003,
+        0.341
+      ],
+      "latency_ms": 101.44,
+      "error": null
+    }
+  ],
+  "defeaters": [
+    {
+      "name": "contradiction",
+      "severity": 0.4,
+      "active": false
+    },
+    {
+      "name": "hallucination_risk",
+      "severity": 0.0,
+      "active": false
+    }
+  ]
+}
