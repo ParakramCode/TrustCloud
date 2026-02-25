@@ -1,6 +1,6 @@
 """
 TrustCloud AI — API v1 Routes
-Versioned API endpoints for trust evaluation.
+Versioned API endpoints for epistemic trust evaluation.
 """
 
 import json
@@ -25,25 +25,26 @@ def _write_telemetry(record: dict, record_id: str) -> None:
         storage = get_storage()
         storage.write(record, record_id)
     except Exception as e:
-        # Storage failure NEVER blocks the API response.
-        # Log and move on. The evaluation result was already returned.
         logger.error(f"Storage write failed for record {record_id}: {e}")
 
 
 @router.post("/evaluate", response_model=TrustResponse)
 def evaluate(req: TrustRequest, background_tasks: BackgroundTasks):
     """
-    Evaluate AI-generated text for trustworthiness.
+    Evaluate AI-generated text for epistemic trustworthiness.
 
-    Runs all registered validators (or a subset if `validators` is specified),
-    aggregates scores, and returns a structured trust assessment.
+    Returns a structured epistemic trust assessment including:
+    - Per-dimension scores with uncertainty bounds
+    - Defeater statuses
+    - System confidence (distinct from text trust)
+    - Known blind spots
 
-    Storage of telemetry records happens asynchronously in the background.
+    Storage of telemetry records happens asynchronously.
     """
     engine = get_engine()
     config = get_config()
 
-    # Run evaluation
+    # Run epistemic evaluation
     result = engine.evaluate(
         text=req.text,
         validator_names=req.validators,
@@ -59,27 +60,36 @@ def evaluate(req: TrustRequest, background_tasks: BackgroundTasks):
             "text_length": len(req.text),
             "metadata": req.metadata,
         },
-        "evaluation": {
+        "assessment": {
             "engine_version": config.engine.version,
-            "trust_score": result.trust_score,
-            "trust_level": result.trust_level,
-            "signals": result.signals,
-            "validators_run": result.validators_run,
-            "validators_failed": result.validators_failed,
-            "validator_details": [
-                {
-                    "name": vr.name,
-                    "version": vr.version,
-                    "score": vr.score,
-                    "error": vr.error,
-                    "latency_ms": vr.latency_ms,
-                }
-                for vr in result.validator_results
-            ],
+            "composite_trust": result.assessment.composite_trust,
+            "confidence": result.assessment.confidence,
+            "trust_level": result.assessment.trust_level,
+            "defeated": result.assessment.defeated,
         },
+        "dimensions": [
+            {
+                "name": d.name,
+                "signal_type": d.signal_type,
+                "score": d.score,
+                "uncertainty": d.uncertainty,
+                "interval": d.interval,
+                "latency_ms": d.latency_ms,
+                "error": d.error,
+            }
+            for d in result.dimensions
+        ],
+        "defeaters": [
+            {
+                "name": df.name,
+                "severity": df.severity,
+                "active": df.active,
+            }
+            for df in result.defeaters
+        ],
     }
 
-    # Queue async storage write (non-blocking)
+    # Queue async storage write
     background_tasks.add_task(_write_telemetry, record, record_id)
 
     return result
@@ -87,24 +97,33 @@ def evaluate(req: TrustRequest, background_tasks: BackgroundTasks):
 
 @router.get("/validators")
 def list_validators():
-    """List all registered validators with metadata."""
+    """List all registered validators with epistemic metadata."""
     engine = get_engine()
     return {
         "validators": engine.registry.info(),
         "count": len(engine.registry),
+        "model": "epistemic_trust_v1",
     }
 
 
 @router.get("/health")
 def health():
-    """Health check endpoint."""
+    """Health check with epistemic model information."""
     engine = get_engine()
     config = get_config()
+
+    # Count by signal type
+    validators_info = engine.registry.info()
+    positive_count = sum(1 for v in validators_info if v.get("signal_type") == "positive_indicator")
+    defeater_count = sum(1 for v in validators_info if v.get("signal_type") == "defeater")
+
     return {
         "status": "ok",
         "service": "TrustCloud AI",
+        "model": "epistemic_trust_v1",
         "engine_version": config.engine.version,
         "validators_loaded": len(engine.registry),
-        "validator_names": engine.registry.names(),
+        "positive_indicators": positive_count,
+        "defeaters": defeater_count,
         "storage_backend": config.storage.backend,
     }

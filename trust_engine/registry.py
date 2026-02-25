@@ -80,12 +80,14 @@ class ValidatorRegistry:
         return list(self._validators.keys())
 
     def info(self) -> List[dict]:
-        """Return metadata about all registered validators."""
+        """Return metadata about all registered validators (epistemic model)."""
         return [
             {
                 "name": v.name,
                 "version": v.version,
                 "default_weight": v.default_weight,
+                "signal_type": v.signal_type,
+                "method_type": v.method_type,
                 "inverted": v.inverted,
             }
             for v in self._validators.values()

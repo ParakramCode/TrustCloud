@@ -1,18 +1,26 @@
 """
-TrustCloud AI — Trust Engine (Facade)
-Wires together registry, orchestrator, and aggregator into a single evaluate() call.
+TrustCloud AI — Trust Engine (Epistemic Trust Model)
+
+Facade that wires registry, orchestrator, and epistemic aggregator.
+Produces a full epistemic trust assessment.
 """
 
 import logging
 from typing import List, Optional
 
 from schemas.config import EngineConfig
-from schemas.response import TrustResponse, ValidatorResult
+from schemas.response import (
+    TrustResponse,
+    EpistemicAssessment,
+    DimensionResult,
+    DefeaterStatus,
+    ConfidenceFactors,
+)
 from trust_engine.registry import ValidatorRegistry
 from trust_engine.orchestrator import TrustOrchestrator
 from trust_engine.aggregator import (
     AggregationStrategy,
-    KnockoutGatedStrategy,
+    EpistemicAggregationStrategy,
 )
 
 logger = logging.getLogger("trustcloud.engine")
@@ -20,13 +28,14 @@ logger = logging.getLogger("trustcloud.engine")
 
 class TrustEngine:
     """
-    Top-level facade for the trust evaluation pipeline.
+    Top-level facade for the epistemic trust evaluation pipeline.
 
-    Responsibilities:
-    - Owns the validator registry
-    - Owns the orchestrator and aggregator
-    - Provides evaluate() as the single entry point
-    - Handles selective evaluation (run only specific validators)
+    The engine orchestrates:
+    1. Validator registry (which validators exist)
+    2. Orchestrator (how validators are executed — concurrently, with timeouts)
+    3. Aggregator (how results are combined — epistemic model)
+
+    The output is a TrustResponse that encodes the full epistemic assessment.
     """
 
     def __init__(
@@ -46,8 +55,8 @@ class TrustEngine:
             timeout_seconds=self.config.validator_timeout_seconds,
         )
 
-        # Build aggregator (default: knockout-gated)
-        self.aggregator = aggregation_strategy or KnockoutGatedStrategy()
+        # Build aggregator (default: epistemic)
+        self.aggregator = aggregation_strategy or EpistemicAggregationStrategy()
 
     def evaluate(
         self,
@@ -55,15 +64,14 @@ class TrustEngine:
         validator_names: Optional[List[str]] = None,
     ) -> TrustResponse:
         """
-        Run trust evaluation on the input text.
+        Run epistemic trust evaluation on the input text.
 
         Args:
             text: AI-generated text to evaluate.
             validator_names: Optional list of validator names to run.
-                             If None, all registered validators run.
 
         Returns:
-            TrustResponse with scores, signals, and per-validator details.
+            TrustResponse with full epistemic assessment.
         """
         # Resolve which validators to run
         if validator_names:
@@ -71,7 +79,7 @@ class TrustEngine:
         else:
             validators = self.registry.all()
 
-        # Run orchestrator
+        # Run orchestrator (concurrent, with timeouts)
         orchestrator_results = self.orchestrator.run_all(
             validators=validators,
             text=text,
@@ -81,35 +89,87 @@ class TrustEngine:
         # Build validator lookup for aggregator
         validator_map = {v.name: v for v in validators}
 
-        # Aggregate
-        trust_score, trust_level = self.aggregator.aggregate(
+        # Aggregate using epistemic strategy
+        agg = self.aggregator.aggregate(
             results=orchestrator_results,
             validators=validator_map,
         )
 
-        # Build response
-        signals = {}
-        validator_results = []
+        # ── Build structured response ──
+
+        # Dimension results
+        dimensions = []
         failed_count = 0
 
         for r in orchestrator_results:
-            signals[r.name] = r.output.score if r.succeeded else None
-            validator_results.append(ValidatorResult(
-                name=r.name,
-                version=r.version,
-                score=r.output.score if r.succeeded else None,
-                error=r.error,
-                latency_ms=r.latency_ms,
-            ))
-            if not r.succeeded:
+            v = validator_map.get(r.name)
+            if r.succeeded and v:
+                dimensions.append(DimensionResult(
+                    name=r.name,
+                    version=r.version,
+                    signal_type=v.signal_type,
+                    method_type=v.method_type,
+                    score=round(r.output.score, 3),
+                    uncertainty=round(r.output.uncertainty, 3),
+                    interval=list(r.output.interval),
+                    explanation=r.output.explanation,
+                    evidence=r.output.evidence,
+                    error=None,
+                    latency_ms=r.latency_ms,
+                ))
+            else:
+                dimensions.append(DimensionResult(
+                    name=r.name,
+                    version=r.version,
+                    signal_type=v.signal_type if v else "unknown",
+                    method_type=v.method_type if v else "unknown",
+                    score=None,
+                    uncertainty=None,
+                    interval=None,
+                    explanation=None,
+                    evidence=None,
+                    error=r.error,
+                    latency_ms=r.latency_ms,
+                ))
                 failed_count += 1
 
+        # Defeater statuses
+        defeaters = [
+            DefeaterStatus(
+                name=ds["name"],
+                severity=ds["severity"],
+                threshold=ds["threshold"],
+                active=ds["active"],
+                explanation=ds["explanation"],
+            )
+            for ds in agg["defeater_statuses"]
+        ]
+
+        # Confidence factors
+        cf = agg.get("confidence_factors", {})
+        confidence_factors = ConfidenceFactors(
+            validator_success_rate=cf.get("validator_success_rate", 0.0),
+            mean_uncertainty=cf.get("mean_uncertainty", 0.5),
+            input_quality=cf.get("input_quality", 1.0),
+            dimension_coverage=cf.get("dimension_coverage", 0.0),
+        )
+
+        # Core assessment
+        assessment = EpistemicAssessment(
+            composite_trust=agg["composite_trust"],
+            confidence=agg["confidence"],
+            trust_level=agg["trust_level"],
+            defeated=agg["defeated"],
+            interpretation=agg["interpretation"],
+        )
+
         return TrustResponse(
-            trust_score=trust_score,
-            trust_level=trust_level,
-            signals=signals,
-            validator_results=validator_results,
+            assessment=assessment,
+            dimensions=dimensions,
+            defeaters=defeaters,
+            confidence_factors=confidence_factors,
+            engine_version=self.config.version,
             validators_run=len(orchestrator_results),
             validators_failed=failed_count,
-            engine_version=self.config.version,
+            blind_spots=agg["blind_spots"],
         )

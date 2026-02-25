@@ -2,10 +2,16 @@
 TrustCloud AI — Reasoning Depth Validator
 Measures reasoning quality: structure, multi-step chains, and penalizes
 circular reasoning, tautologies, and fake causality.
+
+Epistemic classification: POSITIVE INDICATOR
+Method: Keyword heuristic (base uncertainty ≈ 0.20)
+
+Reasoning depth is a positive indicator because valid causal chains
+and multi-step reasoning increase the epistemic grounding of claims.
 """
 
 import re
-from validators.base import BaseValidator, ValidatorOutput
+from validators.base import BaseValidator, ValidatorOutput, estimate_uncertainty
 
 
 class ReasoningDepthValidator(BaseValidator):
@@ -22,8 +28,17 @@ class ReasoningDepthValidator(BaseValidator):
     def default_weight(self) -> float:
         return 0.15
 
+    @property
+    def method_type(self) -> str:
+        return "keyword_heuristic"
+
+    @property
+    def signal_type(self) -> str:
+        return "positive_indicator"
+
     def run(self, text: str) -> ValidatorOutput:
         text_lower = text.lower()
+        uncertainty = estimate_uncertainty(self.method_type, text)
 
         # --- Reasoning connectors (positive) ---
         reasoning_markers = [
@@ -79,6 +94,23 @@ class ReasoningDepthValidator(BaseValidator):
         raw_score = structure_score + chain_bonus - total_penalty
         score = round(max(0.0, min(raw_score, 1.0)), 3)
 
+        # If penalties were applied, uncertainty is higher
+        if total_penalty > 0:
+            uncertainty = min(uncertainty * 1.3, 0.5)
+
+        # --- Evidence ---
+        evidence = []
+        if found_reasoning:
+            evidence.append({"type": "reasoning_markers", "found": found_reasoning})
+        if found_chain:
+            evidence.append({"type": "chain_markers", "found": found_chain, "bonus": round(chain_bonus, 3)})
+        if circular_penalty > 0:
+            evidence.append({"type": "circular_reasoning", "penalty": round(circular_penalty, 3)})
+        if tautology_penalty > 0:
+            evidence.append({"type": "tautology", "penalty": round(tautology_penalty, 3)})
+        if found_fake:
+            evidence.append({"type": "fake_causality", "found": found_fake, "penalty": round(fake_penalty, 3)})
+
         # --- Explanation ---
         parts = []
         if found_reasoning:
@@ -94,4 +126,9 @@ class ReasoningDepthValidator(BaseValidator):
         if not parts:
             parts.append("No reasoning structure detected.")
 
-        return ValidatorOutput(score=score, explanation=" ".join(parts))
+        return ValidatorOutput(
+            score=score,
+            uncertainty=uncertainty,
+            explanation=" ".join(parts),
+            evidence=evidence,
+        )

@@ -1,10 +1,17 @@
 """
 TrustCloud AI — Hallucination Risk Validator
 Heuristic hallucination risk detector based on uncertainty, vagueness, and absolutism markers.
+
+Epistemic classification: DEFEATER
+Method: Keyword heuristic (base uncertainty ≈ 0.20)
+
+Hallucination risk is a defeater because an ungrounded claim, no matter
+how coherently expressed, should not be trusted. The absence of factual
+grounding undermines the epistemic basis for belief.
 """
 
 import re
-from validators.base import BaseValidator, ValidatorOutput
+from validators.base import BaseValidator, ValidatorOutput, estimate_uncertainty
 
 
 class HallucinationValidator(BaseValidator):
@@ -22,11 +29,16 @@ class HallucinationValidator(BaseValidator):
         return 0.20
 
     @property
-    def inverted(self) -> bool:
-        return True  # Higher score = higher hallucination risk = WORSE trust
+    def method_type(self) -> str:
+        return "keyword_heuristic"
+
+    @property
+    def signal_type(self) -> str:
+        return "defeater"
 
     def run(self, text: str) -> ValidatorOutput:
         text_lower = text.lower()
+        uncertainty = estimate_uncertainty(self.method_type, text)
 
         uncertainty_markers = [
             "maybe", "might", "could be", "possibly", "it seems",
@@ -56,6 +68,17 @@ class HallucinationValidator(BaseValidator):
 
         score = round(min(uncertainty_score + vagueness_score + absolutism_score + grounding_penalty, 1.0), 3)
 
+        # Build evidence
+        evidence = []
+        if found_uncertainty:
+            evidence.append({"type": "uncertainty_markers", "found": found_uncertainty})
+        if found_vagueness:
+            evidence.append({"type": "vagueness_markers", "found": found_vagueness})
+        if found_absolutism:
+            evidence.append({"type": "absolutism_markers", "found": found_absolutism})
+        if grounding_penalty > 0:
+            evidence.append({"type": "grounding_penalty", "numeric_refs": numeric_refs})
+
         parts = []
         if found_uncertainty:
             parts.append(f"Uncertainty markers: {found_uncertainty}.")
@@ -68,4 +91,9 @@ class HallucinationValidator(BaseValidator):
         if not parts:
             parts.append("No hallucination risk indicators detected.")
 
-        return ValidatorOutput(score=score, explanation=" ".join(parts))
+        return ValidatorOutput(
+            score=score,
+            uncertainty=uncertainty,
+            explanation=" ".join(parts),
+            evidence=evidence,
+        )

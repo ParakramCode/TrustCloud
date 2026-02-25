@@ -1,9 +1,17 @@
 """
 TrustCloud AI — Contradiction Validator
 Detects self-contradiction through marker analysis and sentiment polarity flips.
+
+Epistemic classification: DEFEATER
+Method: Keyword heuristic + sentiment analysis (base uncertainty ≈ 0.18)
+
+A defeater is a signal that, when strong, should CAP the overall trust
+regardless of how well other dimensions score. Contradiction is the
+canonical epistemic defeater: a text that contradicts itself cannot
+be trusted, no matter how coherent or well-grounded it appears.
 """
 
-from validators.base import BaseValidator, ValidatorOutput
+from validators.base import BaseValidator, ValidatorOutput, estimate_uncertainty
 from textblob import TextBlob
 
 
@@ -22,11 +30,16 @@ class ContradictionValidator(BaseValidator):
         return 0.20
 
     @property
-    def inverted(self) -> bool:
-        return True  # Higher score = more contradictory = WORSE trust
+    def method_type(self) -> str:
+        return "sentiment_analysis"
+
+    @property
+    def signal_type(self) -> str:
+        return "defeater"
 
     def run(self, text: str) -> ValidatorOutput:
         text_lower = text.lower()
+        uncertainty = estimate_uncertainty(self.method_type, text)
 
         contradiction_markers = [
             "but", "however", "although", "yet", "on the other hand",
@@ -58,6 +71,15 @@ class ContradictionValidator(BaseValidator):
 
         score = round(min(marker_score + negation_score + polarity_conflict, 1.0), 3)
 
+        # Build evidence
+        evidence = []
+        if found_markers:
+            evidence.append({"type": "contradiction_markers", "found": found_markers})
+        if found_negations:
+            evidence.append({"type": "negation_terms", "found": found_negations})
+        if polarity_conflict > 0:
+            evidence.append({"type": "polarity_conflict", "polarity": round(polarity, 3), "note": polarity_note})
+
         parts = []
         if found_markers:
             parts.append(f"Contradiction markers found: {found_markers}.")
@@ -68,6 +90,9 @@ class ContradictionValidator(BaseValidator):
         if not parts:
             parts.append("No contradiction indicators detected.")
 
-        explanation = " ".join(parts)
-
-        return ValidatorOutput(score=score, explanation=explanation)
+        return ValidatorOutput(
+            score=score,
+            uncertainty=uncertainty,
+            explanation=" ".join(parts),
+            evidence=evidence,
+        )

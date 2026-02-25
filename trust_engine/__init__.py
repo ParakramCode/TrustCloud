@@ -6,7 +6,7 @@ from trust_engine.orchestrator import TrustOrchestrator
 from trust_engine.aggregator import (
     AggregationStrategy,
     WeightedAverageStrategy,
-    KnockoutGatedStrategy,
+    EpistemicAggregationStrategy,
 )
 
 __all__ = [
@@ -15,5 +15,5 @@ __all__ = [
     "TrustOrchestrator",
     "AggregationStrategy",
     "WeightedAverageStrategy",
-    "KnockoutGatedStrategy",
+    "EpistemicAggregationStrategy",
 ]
