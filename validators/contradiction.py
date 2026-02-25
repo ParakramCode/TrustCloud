@@ -1,35 +1,73 @@
+"""
+TrustCloud AI — Contradiction Validator
+Detects self-contradiction through marker analysis and sentiment polarity flips.
+"""
+
+from validators.base import BaseValidator, ValidatorOutput
 from textblob import TextBlob
 
-def check_contradiction(text: str) -> float:
-    """
-    Returns contradiction probability in range [0,1]
-    """
 
-    text_lower = text.lower()
+class ContradictionValidator(BaseValidator):
 
-    contradiction_markers = [
-        "but", "however", "although", "yet", "on the other hand",
-        "contradicts", "in contrast", "nevertheless"
-    ]
+    @property
+    def name(self) -> str:
+        return "contradiction"
 
-    negations = ["not", "never", "no", "none", "nothing", "nobody"]
+    @property
+    def version(self) -> str:
+        return "v1.0"
 
-    # Marker-based detection
-    marker_score = sum(1 for w in contradiction_markers if w in text_lower) * 0.15
+    @property
+    def default_weight(self) -> float:
+        return 0.20
 
-    # Negation density
-    negation_score = sum(1 for w in negations if w in text_lower) * 0.1
+    @property
+    def inverted(self) -> bool:
+        return True  # Higher score = more contradictory = WORSE trust
 
-    # Sentiment polarity flip detection
-    blob = TextBlob(text)
-    polarity = blob.sentiment.polarity  # -1 to +1
+    def run(self, text: str) -> ValidatorOutput:
+        text_lower = text.lower()
 
-    polarity_conflict = 0
-    if polarity > 0.3 and any(n in text_lower for n in negations):
-        polarity_conflict = 0.3
-    elif polarity < -0.3 and any(n in text_lower for n in negations):
-        polarity_conflict = 0.3
+        contradiction_markers = [
+            "but", "however", "although", "yet", "on the other hand",
+            "contradicts", "in contrast", "nevertheless"
+        ]
 
-    score = marker_score + negation_score + polarity_conflict
+        negations = ["not", "never", "no", "none", "nothing", "nobody"]
 
-    return round(min(score, 1.0), 3)
+        # Marker-based detection
+        found_markers = [w for w in contradiction_markers if w in text_lower]
+        marker_score = len(found_markers) * 0.15
+
+        # Negation density
+        found_negations = [w for w in negations if w in text_lower]
+        negation_score = len(found_negations) * 0.1
+
+        # Sentiment polarity flip detection
+        blob = TextBlob(text)
+        polarity = blob.sentiment.polarity
+
+        polarity_conflict = 0.0
+        polarity_note = ""
+        if polarity > 0.3 and found_negations:
+            polarity_conflict = 0.3
+            polarity_note = f"Positive sentiment ({polarity:.2f}) conflicts with negation markers."
+        elif polarity < -0.3 and found_negations:
+            polarity_conflict = 0.3
+            polarity_note = f"Negative sentiment ({polarity:.2f}) with negation markers suggests mixed signals."
+
+        score = round(min(marker_score + negation_score + polarity_conflict, 1.0), 3)
+
+        parts = []
+        if found_markers:
+            parts.append(f"Contradiction markers found: {found_markers}.")
+        if found_negations:
+            parts.append(f"Negation terms found: {found_negations}.")
+        if polarity_note:
+            parts.append(polarity_note)
+        if not parts:
+            parts.append("No contradiction indicators detected.")
+
+        explanation = " ".join(parts)
+
+        return ValidatorOutput(score=score, explanation=explanation)

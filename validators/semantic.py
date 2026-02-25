@@ -1,35 +1,54 @@
-from sentence_transformers import SentenceTransformer
+"""
+TrustCloud AI — Semantic Consistency Validator
+Measures semantic consistency between adjacent sentences using sentence embeddings.
+
+NOTE: This validator shares the same embedding model as the CoherenceValidator.
+      In future, a shared model provider should be used to avoid double-loading.
+      For now, it reuses the module-level instance from coherence.py.
+"""
+
+from validators.base import BaseValidator, ValidatorOutput
+from validators.coherence import _model  # Share the sentence-transformers model
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
-def split_sentences(text):
-    return [s.strip() for s in text.split('.') if len(s.strip()) > 10]
+class SemanticConsistencyValidator(BaseValidator):
 
-def check_semantic_consistency(text: str) -> float:
-    """
-    Returns semantic consistency score [0,1]
-    """
+    @property
+    def name(self) -> str:
+        return "semantic_consistency"
 
-    sentences = split_sentences(text)
+    @property
+    def version(self) -> str:
+        return "v1.0"
 
-    if len(sentences) < 2:
-        return 1.0  # single statement = consistent by default
+    @property
+    def default_weight(self) -> float:
+        return 0.10
 
-    embeddings = model.encode(sentences)
+    def run(self, text: str) -> ValidatorOutput:
+        sentences = [s.strip() for s in text.split(".") if len(s.strip()) > 10]
 
-    similarities = []
-    for i in range(len(embeddings) - 1):
-        sim = cosine_similarity(
-            [embeddings[i]],
-            [embeddings[i+1]]
-        )[0][0]
-        similarities.append(sim)
+        if len(sentences) < 2:
+            return ValidatorOutput(
+                score=1.0,
+                explanation="Single meaningful sentence — semantic consistency is trivially 1.0."
+            )
 
-    avg_sim = float(np.mean(similarities))
+        embeddings = _model.encode(sentences)
 
-    # Normalize similarity to 0–1 scale
-    normalized = max(0.0, min(avg_sim, 1.0))
+        similarities = []
+        for i in range(len(embeddings) - 1):
+            sim = cosine_similarity([embeddings[i]], [embeddings[i + 1]])[0][0]
+            similarities.append(float(sim))
 
-    return round(normalized, 3)
+        avg_sim = float(np.mean(similarities))
+        score = round(max(0.0, min(avg_sim, 1.0)), 3)
+
+        explanation = (
+            f"Computed pairwise semantic similarity across {len(sentences)} sentences "
+            f"(min length >10 chars). Average cosine similarity: {avg_sim:.3f}."
+        )
+
+        return ValidatorOutput(score=score, explanation=explanation)

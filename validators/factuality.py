@@ -1,37 +1,54 @@
-import spacy
+"""
+TrustCloud AI — Factual Density Validator
+Measures factual grounding via named entities, numbers, dates, and proper nouns.
+"""
+
 import re
+import spacy
+from validators.base import BaseValidator, ValidatorOutput
 
-nlp = spacy.load("en_core_web_sm")
+# Loaded once at module level
+_nlp = spacy.load("en_core_web_sm")
 
-def check_factual_density(text: str) -> float:
-    """
-    Returns factual density score [0,1]
-    """
 
-    doc = nlp(text)
+class FactualDensityValidator(BaseValidator):
 
-    # Named entities
-    entity_count = len(doc.ents)
+    @property
+    def name(self) -> str:
+        return "factual_density"
 
-    # Numbers
-    number_count = len(re.findall(r"\d+", text))
+    @property
+    def version(self) -> str:
+        return "v1.0"
 
-    # Dates
-    date_entities = len([ent for ent in doc.ents if ent.label_ in ["DATE", "TIME"]])
+    @property
+    def default_weight(self) -> float:
+        return 0.10
 
-    # Proper nouns
-    proper_nouns = len([t for t in doc if t.pos_ == "PROPN"])
+    def run(self, text: str) -> ValidatorOutput:
+        doc = _nlp(text)
 
-    # Total tokens
-    token_count = max(len(doc), 1)
+        entity_count = len(doc.ents)
+        number_count = len(re.findall(r"\d+", text))
+        date_entities = [ent for ent in doc.ents if ent.label_ in ("DATE", "TIME")]
+        proper_nouns = [t for t in doc if t.pos_ == "PROPN"]
 
-    factual_score = (
-        (entity_count * 0.3) +
-        (number_count * 0.2) +
-        (date_entities * 0.2) +
-        (proper_nouns * 0.3)
-    )
+        token_count = max(len(doc), 1)
 
-    normalized = factual_score / token_count
+        factual_score = (
+            (entity_count * 0.3) +
+            (number_count * 0.2) +
+            (len(date_entities) * 0.2) +
+            (len(proper_nouns) * 0.3)
+        )
 
-    return round(min(normalized * 10, 1.0), 3)
+        normalized = factual_score / token_count
+        score = round(min(normalized * 10, 1.0), 3)
+
+        explanation = (
+            f"Found {entity_count} named entities, {number_count} numeric references, "
+            f"{len(date_entities)} date/time entities, {len(proper_nouns)} proper nouns "
+            f"across {token_count} tokens. Normalized density: {normalized:.3f}."
+        )
+
+        return ValidatorOutput(score=score, explanation=explanation)
