@@ -12,6 +12,7 @@ from fastapi import APIRouter, BackgroundTasks, HTTPException
 
 from schemas.request import TrustRequest
 from schemas.response import TrustResponse
+from schemas.conversation import ConversationRequest
 from api.dependencies import get_engine, get_storage, get_config
 
 logger = logging.getLogger("trustcloud.api.v1")
@@ -104,6 +105,59 @@ def evaluate(req: TrustRequest, background_tasks: BackgroundTasks):
     return result
 
 
+@router.post("/evaluate/conversation")
+def evaluate_conversation(req: ConversationRequest, background_tasks: BackgroundTasks):
+    """
+    Evaluate epistemic trust across a multi-turn conversation.
+
+    Runs the full TrustEngine on each assistant turn independently,
+    then computes:
+    - Per-turn trust scores and dimension breakdowns
+    - Trust decay trends (linear regression over turn index)
+    - Semantic drift (embedding similarity to conversation anchor)
+    - Defeater accumulation timeline
+
+    This endpoint is designed for studying epistemic quality
+    degradation in long LLM conversations.
+    """
+    from trust_engine.conversation import ConversationAnalyzer
+
+    engine = get_engine()
+    config = get_config()
+
+    analyzer = ConversationAnalyzer(engine=engine)
+
+    messages = [{"role": m.role, "content": m.content} for m in req.messages]
+
+    try:
+        report = analyzer.analyze(
+            messages=messages,
+            evaluate_user_turns=req.evaluate_user_turns,
+        )
+    except Exception as e:
+        logger.error(f"Conversation analysis failed: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail={"error": f"Conversation analysis failed: {str(e)}"},
+        )
+
+    # Build telemetry record
+    record_id = str(uuid.uuid4())
+    record = {
+        "id": record_id,
+        "type": "conversation",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "metadata": req.metadata,
+        "turn_count": len(req.messages),
+        "evaluated_turns": report.get("evaluated_turns", 0),
+        "summary": report.get("conversation_summary", {}),
+    }
+
+    background_tasks.add_task(_write_telemetry, record, record_id)
+
+    return report
+
+
 @router.get("/validators")
 def list_validators():
     """List all registered validators with epistemic metadata."""
@@ -135,4 +189,10 @@ def health():
         "positive_indicators": positive_count,
         "defeaters": defeater_count,
         "storage_backend": config.storage.backend,
+        "endpoints": {
+            "evaluate": "/v1/evaluate",
+            "evaluate_conversation": "/v1/evaluate/conversation",
+            "validators": "/v1/validators",
+        },
     }
+
